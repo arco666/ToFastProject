@@ -28,129 +28,117 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSGDetail));
+            this.gridview = new System.Windows.Forms.DataGridView();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.gbEvaluation = new System.Windows.Forms.GroupBox();
+            this.radiobtnBad = new System.Windows.Forms.RadioButton();
+            this.radiobtnSoso = new System.Windows.Forms.RadioButton();
+            this.radiobtnGood = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
+            this.gbEvaluation.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridview
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(612, 391);
-            this.dataGridView1.TabIndex = 0;
+            this.gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridview.Location = new System.Drawing.Point(27, 31);
+            this.gridview.Name = "gridview";
+            this.gridview.RowTemplate.Height = 30;
+            this.gridview.Size = new System.Drawing.Size(546, 391);
+            this.gridview.TabIndex = 0;
             // 
-            // button6
+            // btnSave
             // 
-            this.button6.Location = new System.Drawing.Point(645, 31);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(121, 36);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "저 장";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(599, 31);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(121, 36);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "저 장";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnConfirm
             // 
-            this.button7.Location = new System.Drawing.Point(645, 73);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(121, 36);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "확 인";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnConfirm.Location = new System.Drawing.Point(599, 73);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(121, 36);
+            this.btnConfirm.TabIndex = 7;
+            this.btnConfirm.Text = "확 인";
+            this.btnConfirm.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gbEvaluation
             // 
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(656, 276);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(110, 146);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "평 가";
+            this.gbEvaluation.Controls.Add(this.radiobtnBad);
+            this.gbEvaluation.Controls.Add(this.radiobtnSoso);
+            this.gbEvaluation.Controls.Add(this.radiobtnGood);
+            this.gbEvaluation.Location = new System.Drawing.Point(599, 276);
+            this.gbEvaluation.Name = "gbEvaluation";
+            this.gbEvaluation.Size = new System.Drawing.Size(189, 134);
+            this.gbEvaluation.TabIndex = 8;
+            this.gbEvaluation.TabStop = false;
+            this.gbEvaluation.Text = "평 가";
             // 
-            // radioButton1
+            // radiobtnBad
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 28);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(79, 22);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "평가1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radiobtnBad.AutoSize = true;
+            this.radiobtnBad.Location = new System.Drawing.Point(7, 97);
+            this.radiobtnBad.Name = "radiobtnBad";
+            this.radiobtnBad.Size = new System.Drawing.Size(147, 22);
+            this.radiobtnBad.TabIndex = 3;
+            this.radiobtnBad.TabStop = true;
+            this.radiobtnBad.Text = "모욕감 스튜핏";
+            this.radiobtnBad.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radiobtnSoso
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 56);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 22);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "평가1";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radiobtnSoso.AutoSize = true;
+            this.radiobtnSoso.Location = new System.Drawing.Point(7, 69);
+            this.radiobtnSoso.Name = "radiobtnSoso";
+            this.radiobtnSoso.Size = new System.Drawing.Size(57, 22);
+            this.radiobtnSoso.TabIndex = 2;
+            this.radiobtnSoso.TabStop = true;
+            this.radiobtnSoso.Text = "네.";
+            this.radiobtnSoso.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radiobtnGood
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 84);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(79, 22);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "평가1";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(7, 112);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(79, 22);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "평가1";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radiobtnGood.AutoSize = true;
+            this.radiobtnGood.Location = new System.Drawing.Point(6, 41);
+            this.radiobtnGood.Name = "radiobtnGood";
+            this.radiobtnGood.Size = new System.Drawing.Size(117, 22);
+            this.radiobtnGood.TabIndex = 1;
+            this.radiobtnGood.TabStop = true;
+            this.radiobtnGood.Text = "좋은 질문!";
+            this.radiobtnGood.UseVisualStyleBackColor = true;
             // 
             // MSGDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gbEvaluation);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.gridview);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MSGDetail";
             this.Text = "MSGDetail";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridview)).EndInit();
+            this.gbEvaluation.ResumeLayout(false);
+            this.gbEvaluation.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DataGridView gridview;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.GroupBox gbEvaluation;
+        private System.Windows.Forms.RadioButton radiobtnBad;
+        private System.Windows.Forms.RadioButton radiobtnSoso;
+        private System.Windows.Forms.RadioButton radiobtnGood;
     }
 }

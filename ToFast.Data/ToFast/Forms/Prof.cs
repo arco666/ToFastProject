@@ -16,5 +16,10 @@ namespace ToFast
         {
             InitializeComponent();
         }
+
+        private void Prof_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

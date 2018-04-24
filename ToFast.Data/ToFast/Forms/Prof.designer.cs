@@ -29,49 +29,51 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prof));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gridview = new System.Windows.Forms.DataGridView();
+            this.pictureboxSetting = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxSetting)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridview
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(667, 514);
-            this.dataGridView1.TabIndex = 1;
+            this.gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridview.Location = new System.Drawing.Point(27, 55);
+            this.gridview.Name = "gridview";
+            this.gridview.RowTemplate.Height = 30;
+            this.gridview.Size = new System.Drawing.Size(667, 514);
+            this.gridview.TabIndex = 1;
             // 
-            // pictureBox1
+            // pictureboxSetting
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(700, 519);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureboxSetting.Image = ((System.Drawing.Image)(resources.GetObject("pictureboxSetting.Image")));
+            this.pictureboxSetting.Location = new System.Drawing.Point(700, 519);
+            this.pictureboxSetting.Name = "pictureboxSetting";
+            this.pictureboxSetting.Size = new System.Drawing.Size(67, 50);
+            this.pictureboxSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureboxSetting.TabIndex = 2;
+            this.pictureboxSetting.TabStop = false;
             // 
             // Prof
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 603);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pictureboxSetting);
+            this.Controls.Add(this.gridview);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prof";
             this.Text = "Prof";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Prof_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxSetting)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView gridview;
+        private System.Windows.Forms.PictureBox pictureboxSetting;
     }
 }
