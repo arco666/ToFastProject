@@ -15,6 +15,5 @@ namespace ToFast.Data
     public partial class Setting
     {
         public int TimeLimit_Key { get; set; }
-        public int CountId { get; set; }
     }
 }

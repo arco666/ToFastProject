@@ -89,6 +89,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToFastDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToFastDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ToFastDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToFastDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ToFastDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToFastDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ToFastDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToFastDataSet3.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\History.resx">
       <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +146,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ToFastDataSet.xsc">
+      <DependentUpon>ToFastDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ToFastDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToFastDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToFastDataSet.xss">
+      <DependentUpon>ToFastDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ToFastDataSet1.xsc">
+      <DependentUpon>ToFastDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ToFastDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToFastDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToFastDataSet1.xss">
+      <DependentUpon>ToFastDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ToFastDataSet2.xsc">
+      <DependentUpon>ToFastDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ToFastDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToFastDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToFastDataSet2.xss">
+      <DependentUpon>ToFastDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ToFastDataSet3.xsc">
+      <DependentUpon>ToFastDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ToFastDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToFastDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToFastDataSet3.xss">
+      <DependentUpon>ToFastDataSet3.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

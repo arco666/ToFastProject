@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToFast.Data
+namespace ToFast.Data.Entities
 {
-    public class TimeCountData : EntityData<TimeCount>
-    {
-    }
+	partial class QuestionIndex
+	{
+	}
 }

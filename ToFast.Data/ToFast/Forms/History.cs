@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToFast.Data;
 
 namespace ToFast
 {
@@ -16,5 +17,10 @@ namespace ToFast
         {
             InitializeComponent();
         }
-    }
+
+		private void History_Load(object sender, EventArgs e)
+		{
+			Data.QuestionIndex questionIndex = DataRepository.QuestionIndex.GetByStudentId(DataRepository.User.StudentId);
+		}
+	}
 }

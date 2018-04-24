@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace ToFast.Data
 {
-    public class StudentData : EntityData<Student>
+	/// <summary>
+	/// 작성자: 소재홍
+	/// 작성일: 2018-04-24 17:00
+	/// 수정 : GetByIdAndPassword(string name, string password) 작성
+	/// </summary>
+	public class StudentData : EntityData<Student>
     {
+		public Student GetByIdAndPassword(string name, string password)
+		{
+			using (ToFastEntities context = new ToFastEntities())
+			{
+				return context
+					.Students
+					.Where(x => x.Name == name && x.Password == password && x.LogIn == false )
+					.FirstOrDefault();
+			}
+		}
+
+
     }
 }

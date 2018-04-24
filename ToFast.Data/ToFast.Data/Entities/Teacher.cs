@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToFast.Data
 {
-    public class TimeCountData : EntityData<TimeCount>
-    {
-    }
+	partial class Teacher
+	{
+	}
 }

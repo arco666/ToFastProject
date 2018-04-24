@@ -58,6 +58,9 @@
     <Compile Include="Data\SubjectData.cs" />
     <Compile Include="Data\TeacherData.cs" />
     <Compile Include="Data\TimeCountData.cs" />
+    <Compile Include="Entities\QuestionIndex.cs" />
+    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\Teacher.cs" />
     <Compile Include="EntityData.cs" />
     <Compile Include="FormLocation.cs">
       <DependentUpon>ToFast.tt</DependentUpon>
