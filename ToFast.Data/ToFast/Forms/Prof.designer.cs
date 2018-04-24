@@ -29,19 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prof));
-            this.userControl11 = new ToFast.UserControl1();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(12, 12);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(776, 59);
-            this.userControl11.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -69,7 +61,6 @@
             this.ClientSize = new System.Drawing.Size(800, 603);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.userControl11);
             this.Name = "Prof";
             this.Text = "Prof";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -79,8 +70,7 @@
         }
 
         #endregion
-
-        private UserControl1 userControl11;
+        
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
