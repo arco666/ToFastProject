@@ -12,6 +12,7 @@ namespace ToFast.Data
         public static TeacherData Teacher { get; } = new TeacherData(); 
         public static TimeCountData TimeCount { get; } = new TimeCountData();
 
-        public static Teacher ProfessorUser { get; set; }
+        public static Teacher ProfessorUser { get; set; } = new Teacher();
+        public static Student User { get; set; } = new Student();
     }
 }

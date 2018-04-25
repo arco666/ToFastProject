@@ -15,7 +15,7 @@ namespace ToFast.Data
 //                int profId = DataRepository.ProfessorUser.TeacherId;
                 var query = from x in context.QuestionIndexes
                     where x.TeacherId == 1
-                    select new 
+                    select new
                     {
                         QuestionIndex = x,
                         x.Student.Name
@@ -25,7 +25,8 @@ namespace ToFast.Data
                 {
                     x.QuestionIndex.Name = x.Name;
                 }
-                return list.ConvertAll(x=>x.QuestionIndex);
+
+                return list.ConvertAll(x => x.QuestionIndex);
 //                var query = from x in context.QuestionIndexes
 //                    where x.TeacherId == 1
 //                    select new QuestionView()
@@ -36,7 +37,17 @@ namespace ToFast.Data
 //                        Time = x.QuestionTime
 //                    };
 //                return query.ToList();
+            }
+        }
 
+        public List<QuestionIndex> GetByStudentPK(int studentId)
+        {
+            using (ToFastEntities context = new ToFastEntities())
+            {
+                var quary = from x in context.QuestionIndexes
+                    where x.StudentId == studentId
+                    select x;
+                return quary.ToList();
             }
         }
     }

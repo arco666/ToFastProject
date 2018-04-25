@@ -159,8 +159,11 @@ namespace ToFast.Data
         {
             using (DbContext context = Create())
             {
+                List<T> quary = context.Set<T>().ToList();
 //                return context.Set<T>().FirstOrDefault(x => predicate(x));
-                return context.Set<T>().FirstOrDefault(predicate);
+                if (predicate != null)
+                    quary.Where(predicate);
+                return context.Set<T>().FirstOrDefault();
             }
         }
     }
