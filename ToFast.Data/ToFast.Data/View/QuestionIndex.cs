@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ToFast.Data
 {
-    public class TimeCountData : EntityData<TimeCount>
+    public partial class QuestionIndex
     {
+        public string Name { get; set; }
     }
 }

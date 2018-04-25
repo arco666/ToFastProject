@@ -28,117 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSGDetail));
-            this.gridview = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.gbEvaluation = new System.Windows.Forms.GroupBox();
-            this.radiobtnBad = new System.Windows.Forms.RadioButton();
-            this.radiobtnSoso = new System.Windows.Forms.RadioButton();
-            this.radiobtnGood = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
-            this.gbEvaluation.SuspendLayout();
+            this.tbContext = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.questionViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.evaluation = new ToFast.Controls.Evaluation();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridview
+            // btnExport
             // 
-            this.gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridview.Location = new System.Drawing.Point(27, 31);
-            this.gridview.Name = "gridview";
-            this.gridview.RowTemplate.Height = 30;
-            this.gridview.Size = new System.Drawing.Size(546, 391);
-            this.gridview.TabIndex = 0;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(599, 31);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(121, 36);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "저 장";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExport.Location = new System.Drawing.Point(700, 472);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(143, 36);
+            this.btnExport.TabIndex = 6;
+            this.btnExport.Text = "내보내기(.txt)";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(599, 73);
+            this.btnConfirm.Location = new System.Drawing.Point(700, 413);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(121, 36);
+            this.btnConfirm.Size = new System.Drawing.Size(143, 36);
             this.btnConfirm.TabIndex = 7;
             this.btnConfirm.Text = "확 인";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // gbEvaluation
+            // tbContext
             // 
-            this.gbEvaluation.Controls.Add(this.radiobtnBad);
-            this.gbEvaluation.Controls.Add(this.radiobtnSoso);
-            this.gbEvaluation.Controls.Add(this.radiobtnGood);
-            this.gbEvaluation.Location = new System.Drawing.Point(599, 276);
-            this.gbEvaluation.Name = "gbEvaluation";
-            this.gbEvaluation.Size = new System.Drawing.Size(189, 134);
-            this.gbEvaluation.TabIndex = 8;
-            this.gbEvaluation.TabStop = false;
-            this.gbEvaluation.Text = "평 가";
+            this.tbContext.Location = new System.Drawing.Point(27, 94);
+            this.tbContext.Multiline = true;
+            this.tbContext.Name = "tbContext";
+            this.tbContext.Size = new System.Drawing.Size(640, 414);
+            this.tbContext.TabIndex = 9;
             // 
-            // radiobtnBad
+            // pictureBox1
             // 
-            this.radiobtnBad.AutoSize = true;
-            this.radiobtnBad.Location = new System.Drawing.Point(7, 97);
-            this.radiobtnBad.Name = "radiobtnBad";
-            this.radiobtnBad.Size = new System.Drawing.Size(147, 22);
-            this.radiobtnBad.TabIndex = 3;
-            this.radiobtnBad.TabStop = true;
-            this.radiobtnBad.Text = "모욕감 스튜핏";
-            this.radiobtnBad.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(27, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
-            // radiobtnSoso
+            // lbName
             // 
-            this.radiobtnSoso.AutoSize = true;
-            this.radiobtnSoso.Location = new System.Drawing.Point(7, 69);
-            this.radiobtnSoso.Name = "radiobtnSoso";
-            this.radiobtnSoso.Size = new System.Drawing.Size(57, 22);
-            this.radiobtnSoso.TabIndex = 2;
-            this.radiobtnSoso.TabStop = true;
-            this.radiobtnSoso.Text = "네.";
-            this.radiobtnSoso.UseVisualStyleBackColor = true;
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(119, 52);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(68, 18);
+            this.lbName.TabIndex = 11;
+            this.lbName.Text = "lbName";
             // 
-            // radiobtnGood
+            // lbTime
             // 
-            this.radiobtnGood.AutoSize = true;
-            this.radiobtnGood.Location = new System.Drawing.Point(6, 41);
-            this.radiobtnGood.Name = "radiobtnGood";
-            this.radiobtnGood.Size = new System.Drawing.Size(117, 22);
-            this.radiobtnGood.TabIndex = 1;
-            this.radiobtnGood.TabStop = true;
-            this.radiobtnGood.Text = "좋은 질문!";
-            this.radiobtnGood.UseVisualStyleBackColor = true;
+            this.lbTime.AutoSize = true;
+            this.lbTime.Location = new System.Drawing.Point(351, 52);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbTime.Size = new System.Drawing.Size(236, 18);
+            this.lbTime.TabIndex = 12;
+            this.lbTime.Text = "lbdfsdadfsdfsdfcdsfsdfsdfds";
+            // 
+            // questionViewBindingSource
+            // 
+            this.questionViewBindingSource.DataSource = typeof(ToFast.Data.QuestionView);
+            // 
+            // evaluation
+            // 
+            this.evaluation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.evaluation.Location = new System.Drawing.Point(683, 94);
+            this.evaluation.Name = "evaluation";
+            this.evaluation.Size = new System.Drawing.Size(196, 161);
+            this.evaluation.TabIndex = 13;
             // 
             // MSGDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gbEvaluation);
+            this.ClientSize = new System.Drawing.Size(891, 545);
+            this.Controls.Add(this.evaluation);
+            this.Controls.Add(this.lbTime);
+            this.Controls.Add(this.lbName);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.tbContext);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.gridview);
+            this.Controls.Add(this.btnExport);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MSGDetail";
             this.Text = "MSGDetail";
-            ((System.ComponentModel.ISupportInitialize)(this.gridview)).EndInit();
-            this.gbEvaluation.ResumeLayout(false);
-            this.gbEvaluation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionViewBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView gridview;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.GroupBox gbEvaluation;
-        private System.Windows.Forms.RadioButton radiobtnBad;
-        private System.Windows.Forms.RadioButton radiobtnSoso;
-        private System.Windows.Forms.RadioButton radiobtnGood;
+        private System.Windows.Forms.BindingSource questionViewBindingSource;
+        private System.Windows.Forms.TextBox tbContext;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbTime;
+        private Controls.Evaluation evaluation;
     }
 }
