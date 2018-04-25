@@ -159,8 +159,10 @@ namespace ToFast.Data
         {
             using (DbContext context = Create())
             {
-//                return context.Set<T>().FirstOrDefault(x => predicate(x));
-                return context.Set<T>().FirstOrDefault(predicate);
+                //                return context.Set<T>().FirstOrDefault(x => predicate(x));
+                if (predicate != null)
+                    context.Set<T>().Where(predicate);
+                return context.Set<T>().FirstOrDefault();
             }
         }
     }

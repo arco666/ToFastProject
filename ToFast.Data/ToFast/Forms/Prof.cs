@@ -13,9 +13,14 @@ using ToFast.Data;
 
 namespace ToFast
 {
+    /// <summary>
+    /// 작성자 :   박진수
+    /// 작성일 :   04-24 15:50
+    /// 수정내용 : 백그라운드 신설(bgwWorker), 백그라운드 내에서 알람조건 검사
+    /// </summary>
     public partial class Prof : Form
     {
-        public int SetNum { get; set; } = 0;
+        public int StudentLimit { get; set; } = 0;
         public Prof()
         {
             InitializeComponent();
@@ -30,9 +35,9 @@ namespace ToFast
             do
             {
                 Setting setting = DataRepository.Setting.GetFirst(null);
-                if (DataRepository.TimeCount.GetCount(x=>
-                                                     (DateTime.Now - x.SetTime).Minutes <= setting.TimeLimit_Key)
-                                                      >= SetNum)
+                if (DataRepository.TimeCount.GetCount(x=>(DateTime.Now - x.SetTime).Minutes
+                                                      <= setting.TimeLimit_Key)
+                                                      >= StudentLimit)
                 {
                     bgwWorker.ReportProgress(0);
                 }
@@ -44,9 +49,12 @@ namespace ToFast
         //baseThread
         private void CallAlarm()
         {
-            Forms.Alarm alarm = new Forms.Alarm();
-            Debug.WriteLine("CallAlarm");
-            alarm.Show();
+            if (Properties.Settings.Default.Mute == false)
+            {
+                Forms.Alarm alarm = new Forms.Alarm();
+                Debug.WriteLine("CallAlarm");
+                alarm.Show();
+            }
         }
         private void bgwWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -54,8 +62,6 @@ namespace ToFast
             DataRepository.TimeCount.DeleteAll();
             //알람폼 호출!
             Forms.Alarm alarm = new Forms.Alarm();
-            alarm.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - alarm.Width,
-                                       Screen.PrimaryScreen.WorkingArea.Height - alarm.Height);
             alarm.Show();
         }
         //EndThread

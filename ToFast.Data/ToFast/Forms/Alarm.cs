@@ -11,6 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToFast.Forms
+///<summary>
+/// 작성자 :   박진수
+/// 작성일 :   04-25 16:26
+/// 수정내용 : 신설
+///</summary>
 {
     public partial class Alarm : Form
     {
@@ -23,17 +28,14 @@ namespace ToFast.Forms
         }
         private void Alarm_Load(object sender, EventArgs e)
         {
-            Debug.WriteLine("먀");
             this.bgwCallAlarm.RunWorkerAsync();
         }
         private void bgwCallAlarm_DoWork(object sender, DoWorkEventArgs e)
         {
-            Debug.WriteLine("알람 떴니");
             Thread.Sleep(3000);
         }
         private void bgwCallAlarm_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Debug.WriteLine("끈다?");
             Close();
         }
     }

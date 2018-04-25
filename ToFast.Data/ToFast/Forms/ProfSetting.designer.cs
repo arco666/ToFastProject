@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfSetting));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbSetNum = new System.Windows.Forms.TextBox();
+            this.tbStudentLimit = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cbAlarm = new System.Windows.Forms.CheckBox();
+            this.cbMute = new System.Windows.Forms.CheckBox();
+            this.btnLocReset = new System.Windows.Forms.Button();
             this.lbCurAndTotal = new System.Windows.Forms.Label();
+            this.numTime = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTime)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::ToFast.Properties.Resources.KakaoTalk_20180424_150106837;
             this.pictureBox1.Location = new System.Drawing.Point(31, 26);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
@@ -52,14 +52,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // tbSetNum
+            // tbStudentLimit
             // 
-            this.tbSetNum.Location = new System.Drawing.Point(94, 26);
-            this.tbSetNum.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSetNum.Name = "tbSetNum";
-            this.tbSetNum.Size = new System.Drawing.Size(71, 21);
-            this.tbSetNum.TabIndex = 2;
-            this.tbSetNum.TextChanged += new System.EventHandler(this.tbSetNum_TextChanged);
+            this.tbStudentLimit.Location = new System.Drawing.Point(94, 26);
+            this.tbStudentLimit.Margin = new System.Windows.Forms.Padding(2);
+            this.tbStudentLimit.Name = "tbStudentLimit";
+            this.tbStudentLimit.Size = new System.Drawing.Size(71, 21);
+            this.tbStudentLimit.TabIndex = 2;
             // 
             // label1
             // 
@@ -81,46 +80,38 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "시간 설정";
             // 
-            // comboBox1
+            // cbAlarm
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(171, 53);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(86, 20);
-            this.comboBox1.TabIndex = 6;
+            this.cbAlarm.AutoSize = true;
+            this.cbAlarm.Location = new System.Drawing.Point(94, 83);
+            this.cbAlarm.Margin = new System.Windows.Forms.Padding(2);
+            this.cbAlarm.Name = "cbAlarm";
+            this.cbAlarm.Size = new System.Drawing.Size(88, 16);
+            this.cbAlarm.TabIndex = 7;
+            this.cbAlarm.Text = "메시지 표시";
+            this.cbAlarm.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbMute
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(94, 83);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(88, 16);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "메시지 표시";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbMute.AutoSize = true;
+            this.cbMute.Location = new System.Drawing.Point(94, 105);
+            this.cbMute.Margin = new System.Windows.Forms.Padding(2);
+            this.cbMute.Name = "cbMute";
+            this.cbMute.Size = new System.Drawing.Size(60, 16);
+            this.cbMute.TabIndex = 8;
+            this.cbMute.Text = "음소거";
+            this.cbMute.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // btnLocReset
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(94, 105);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(76, 16);
-            this.checkBox2.TabIndex = 8;
-            this.checkBox2.Text = "알람 켜기";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(94, 126);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 20);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "위치 초기화";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLocReset.Location = new System.Drawing.Point(94, 126);
+            this.btnLocReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLocReset.Name = "btnLocReset";
+            this.btnLocReset.Size = new System.Drawing.Size(91, 20);
+            this.btnLocReset.TabIndex = 9;
+            this.btnLocReset.Text = "위치 초기화";
+            this.btnLocReset.UseVisualStyleBackColor = true;
+            this.btnLocReset.Click += new System.EventHandler(this.btnLocReset_Click);
             // 
             // lbCurAndTotal
             // 
@@ -132,24 +123,49 @@
             this.lbCurAndTotal.Text = "15(총 30)";
             this.lbCurAndTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // numTime
+            // 
+            this.numTime.Location = new System.Drawing.Point(187, 53);
+            this.numTime.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTime.Name = "numTime";
+            this.numTime.Size = new System.Drawing.Size(70, 21);
+            this.numTime.TabIndex = 11;
+            this.numTime.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTime.ValueChanged += new System.EventHandler(this.numTime_ValueChanged);
+            // 
             // ProfSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(295, 176);
+            this.Controls.Add(this.numTime);
             this.Controls.Add(this.lbCurAndTotal);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnLocReset);
+            this.Controls.Add(this.cbMute);
+            this.Controls.Add(this.cbAlarm);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbSetNum);
+            this.Controls.Add(this.tbStudentLimit);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ProfSetting";
             this.Text = "ProfSetting";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfSetting_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,13 +174,13 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox tbSetNum;
+        private System.Windows.Forms.TextBox tbStudentLimit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox cbAlarm;
+        private System.Windows.Forms.CheckBox cbMute;
+        private System.Windows.Forms.Button btnLocReset;
         private System.Windows.Forms.Label lbCurAndTotal;
+        private System.Windows.Forms.NumericUpDown numTime;
     }
 }
