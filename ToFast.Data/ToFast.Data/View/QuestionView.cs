@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToFast.Data.View
+namespace ToFast.Data
 {
-    class QuestionView
+    public class QuestionView
     {
+        public int NO { get; set; }
+        public string Name { get; set; }
+        public DateTime Time { get; set; }
+        public String Content { get; set; }
+        
     }
 }

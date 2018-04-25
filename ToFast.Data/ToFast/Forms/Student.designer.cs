@@ -29,83 +29,84 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picture = new System.Windows.Forms.PictureBox();
+            this.textbox = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.checkboxAnonymous = new System.Windows.Forms.CheckBox();
+            this.btnViewHistory = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picture
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(537, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(79, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
+            this.picture.Location = new System.Drawing.Point(537, 13);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(79, 65);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture.TabIndex = 2;
+            this.picture.TabStop = false;
+            this.picture.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // textBox1
+            // textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(501, 280);
-            this.textBox1.TabIndex = 3;
+            this.textbox.Location = new System.Drawing.Point(13, 13);
+            this.textbox.Multiline = true;
+            this.textbox.Name = "textbox";
+            this.textbox.Size = new System.Drawing.Size(501, 280);
+            this.textbox.TabIndex = 3;
             // 
-            // button1
+            // btnSend
             // 
-            this.button1.Location = new System.Drawing.Point(537, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 49);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "전송";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSend.Location = new System.Drawing.Point(537, 244);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 49);
+            this.btnSend.TabIndex = 4;
+            this.btnSend.Text = "전송";
+            this.btnSend.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkboxAnonymous
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(537, 201);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 22);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "익명";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkboxAnonymous.AutoSize = true;
+            this.checkboxAnonymous.Location = new System.Drawing.Point(537, 201);
+            this.checkboxAnonymous.Name = "checkboxAnonymous";
+            this.checkboxAnonymous.Size = new System.Drawing.Size(70, 22);
+            this.checkboxAnonymous.TabIndex = 5;
+            this.checkboxAnonymous.Text = "익명";
+            this.checkboxAnonymous.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnViewHistory
             // 
-            this.button2.Location = new System.Drawing.Point(526, 87);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 39);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "기록 보기";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnViewHistory.Location = new System.Drawing.Point(526, 87);
+            this.btnViewHistory.Name = "btnViewHistory";
+            this.btnViewHistory.Size = new System.Drawing.Size(101, 39);
+            this.btnViewHistory.TabIndex = 6;
+            this.btnViewHistory.Text = "기록 보기";
+            this.btnViewHistory.UseVisualStyleBackColor = true;
             // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 315);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnViewHistory);
+            this.Controls.Add(this.checkboxAnonymous);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.textbox);
+            this.Controls.Add(this.picture);
             this.Name = "Student";
             this.Text = "Student";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox picture;
+        private System.Windows.Forms.TextBox textbox;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.CheckBox checkboxAnonymous;
+        private System.Windows.Forms.Button btnViewHistory;
     }
 }

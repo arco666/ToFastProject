@@ -18,7 +18,7 @@ namespace ToFast
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EntityDataInitializer.ConnectionString = "name=ToFastEntities";
-            Application.Run(new Login());
+            Application.Run(new Prof());
         }
     }
 }

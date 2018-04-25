@@ -29,41 +29,39 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfSetting));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureboxIcon = new System.Windows.Forms.PictureBox();
+            this.Limitation = new System.Windows.Forms.TextBox();
+            this.textboxTotal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.comboBoxTimeSetting = new System.Windows.Forms.ComboBox();
+            this.btnInitialization = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxIcon)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureboxIcon
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(44, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureboxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureboxIcon.Image")));
+            this.pictureboxIcon.Location = new System.Drawing.Point(30, 39);
+            this.pictureboxIcon.Name = "pictureboxIcon";
+            this.pictureboxIcon.Size = new System.Drawing.Size(82, 83);
+            this.pictureboxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureboxIcon.TabIndex = 0;
+            this.pictureboxIcon.TabStop = false;
             // 
-            // textBox1
+            // Limitation
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 28);
-            this.textBox1.TabIndex = 2;
+            this.Limitation.Location = new System.Drawing.Point(134, 39);
+            this.Limitation.Name = "Limitation";
+            this.Limitation.Size = new System.Drawing.Size(100, 28);
+            this.Limitation.TabIndex = 2;
             // 
-            // textBox2
+            // textboxTotal
             // 
-            this.textBox2.Location = new System.Drawing.Point(265, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 28);
-            this.textBox2.TabIndex = 3;
+            this.textboxTotal.Location = new System.Drawing.Point(265, 39);
+            this.textboxTotal.Name = "textboxTotal";
+            this.textboxTotal.Size = new System.Drawing.Size(100, 28);
+            this.textboxTotal.TabIndex = 3;
             // 
             // label1
             // 
@@ -83,60 +81,39 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "시간 설정";
             // 
-            // comboBox1
+            // comboBoxTimeSetting
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(244, 80);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 6;
+            this.comboBoxTimeSetting.FormattingEnabled = true;
+            this.comboBoxTimeSetting.Location = new System.Drawing.Point(244, 80);
+            this.comboBoxTimeSetting.Name = "comboBoxTimeSetting";
+            this.comboBoxTimeSetting.Size = new System.Drawing.Size(121, 26);
+            this.comboBoxTimeSetting.TabIndex = 6;
             // 
-            // checkBox1
+            // btnInitialization
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(134, 124);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(130, 22);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "메시지 표시";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(134, 157);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(112, 22);
-            this.checkBox2.TabIndex = 8;
-            this.checkBox2.Text = "알람 켜기";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(134, 189);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 30);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "위치 초기화";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInitialization.Location = new System.Drawing.Point(134, 160);
+            this.btnInitialization.Name = "btnInitialization";
+            this.btnInitialization.Size = new System.Drawing.Size(130, 30);
+            this.btnInitialization.TabIndex = 9;
+            this.btnInitialization.Text = "위치 초기화";
+            this.btnInitialization.UseVisualStyleBackColor = true;
             // 
             // ProfSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 264);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(422, 213);
+            this.Controls.Add(this.btnInitialization);
+            this.Controls.Add(this.comboBoxTimeSetting);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textboxTotal);
+            this.Controls.Add(this.Limitation);
+            this.Controls.Add(this.pictureboxIcon);
+
             this.Name = "ProfSetting";
             this.Text = "ProfSetting";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,14 +121,12 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.PictureBox pictureboxIcon;
+        private System.Windows.Forms.TextBox Limitation;
+        private System.Windows.Forms.TextBox textboxTotal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBoxTimeSetting;
+        private System.Windows.Forms.Button btnInitialization;
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToFast.Data.View
+namespace ToFast.Data
 {
-    class QuestionIndex
+    public partial class QuestionIndex
     {
+        public string Name { get; set; }
     }
 }

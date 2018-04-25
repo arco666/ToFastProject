@@ -28,71 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(History));
+            this.gridbox = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.textbox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gridbox)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridbox
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(525, 393);
-            this.dataGridView1.TabIndex = 0;
+            this.gridbox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridbox.Location = new System.Drawing.Point(31, 31);
+            this.gridbox.Name = "gridbox";
+            this.gridbox.RowTemplate.Height = 30;
+            this.gridbox.Size = new System.Drawing.Size(525, 393);
+            this.gridbox.TabIndex = 0;
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Location = new System.Drawing.Point(576, 572);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "삭제";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(576, 572);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 25);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnConfirm
             // 
-            this.button2.Location = new System.Drawing.Point(576, 530);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "수정";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnConfirm.Location = new System.Drawing.Point(576, 527);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 27);
+            this.btnConfirm.TabIndex = 4;
+            this.btnConfirm.Text = "확인";
+            this.btnConfirm.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // textbox
             // 
-            this.button3.Location = new System.Drawing.Point(576, 486);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 27);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "확인";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(31, 464);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(525, 149);
-            this.textBox1.TabIndex = 5;
+            this.textbox.Location = new System.Drawing.Point(31, 464);
+            this.textbox.Multiline = true;
+            this.textbox.Name = "textbox";
+            this.textbox.Size = new System.Drawing.Size(525, 149);
+            this.textbox.TabIndex = 5;
             // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 653);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.textbox);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.gridbox);
+
             this.Name = "History";
             this.Text = "History";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,10 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView gridbox;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.TextBox textbox;
     }
 }
