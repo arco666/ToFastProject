@@ -110,7 +110,7 @@
             this.Controls.Add(this.textboxTotal);
             this.Controls.Add(this.Limitation);
             this.Controls.Add(this.pictureboxIcon);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
             this.Name = "ProfSetting";
             this.Text = "ProfSetting";
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxIcon)).EndInit();

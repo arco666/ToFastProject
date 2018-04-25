@@ -94,7 +94,6 @@
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.textbox);
             this.Controls.Add(this.picture);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Student";
             this.Text = "Student";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();

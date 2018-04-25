@@ -124,7 +124,7 @@
             this.Controls.Add(this.tbContext);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnExport);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
             this.Name = "MSGDetail";
             this.Text = "MSGDetail";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -80,7 +80,7 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.gridbox);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
             this.Name = "History";
             this.Text = "History";
             ((System.ComponentModel.ISupportInitialize)(this.gridbox)).EndInit();

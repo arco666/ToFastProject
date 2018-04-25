@@ -119,7 +119,7 @@
             this.ClientSize = new System.Drawing.Size(800, 603);
             this.Controls.Add(this.dgvProfContents);
             this.Controls.Add(this.pictureboxSetting);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
             this.Name = "Prof";
             this.Text = "Prof";
             this.Load += new System.EventHandler(this.Prof_Load);
