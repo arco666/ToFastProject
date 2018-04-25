@@ -13,13 +13,13 @@ namespace ToFast.Data
 	/// </summary>
 	public class QuestionIndexData : EntityData<QuestionIndex>
     {
-		public List<QuestionIndex> GetByStudentId(int id)
+		public List<QuestionIndex> GetByStudentId(int studentId)
 		{
 			using (ToFastEntities context = new ToFastEntities())
 			{
 				return context
 					.QuestionIndexes
-					.Where(x => x.StudentId == id)
+					.Where(x => x.StudentId == studentId && x.Deletable == false)
 					.ToList();
 			}
 

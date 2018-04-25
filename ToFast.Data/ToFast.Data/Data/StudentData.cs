@@ -19,7 +19,7 @@ namespace ToFast.Data
 			{
 				return context
 					.Students
-					.Where(x => x.Name == name && x.Password == password && x.LogIn == false )
+					.Where(x => x.Name == name && x.Password == password)
 					.FirstOrDefault();
 			}
 		}

@@ -26,7 +26,7 @@ namespace ToFast
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
 			if (cbbType.Text == "")
-				MessageBox.Show($"구분을 선택해주세요.");
+				MessageBox.Show("구분을 선택해주세요.");
 
 			if (cbbType.Text == "교수님용")
 			{
@@ -34,7 +34,7 @@ namespace ToFast
 
 				if (teacher == null)
 				{
-					MessageBox.Show($"아이디 또는 비밀번가 다릅니다 확인해주세요.");
+					MessageBox.Show("아이디 또는 비밀번가 다릅니다 확인해주세요.");
 				}
 				else
 				{
@@ -51,17 +51,21 @@ namespace ToFast
 
 				if (student == null)
 				{
-					MessageBox.Show($"아이디 또는 비밀번가 다릅니다 확인해주세요.");
+					MessageBox.Show("아이디 또는 비밀번가 다릅니다 확인해주세요.");
 				}
 				else
 				{
-					DataRepository.User = student;
+					if (student.LogIn == true)
+					{
+						MessageBox.Show("이미 로그인 중인 아이디입니다.");
+						return;
+					}
 
 					student.LogIn = true;
 
-					//DataRepository.Student.Update(student);
+					DataRepository.Student.Update(student);
 
-					bool login = student.LogIn;
+					DataRepository.User = student;
 
 					this.Visible = false;
 					Student from = new Student();

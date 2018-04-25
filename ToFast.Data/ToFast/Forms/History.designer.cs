@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.toFastDataSet = new ToFast.ToFastDataSet();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.btnDelete = new System.Windows.Forms.Button();
+			this.btnOk = new System.Windows.Forms.Button();
+			this.tbInfo = new System.Windows.Forms.TextBox();
 			this.studentTableAdapter = new ToFast.ToFastDataSetTableAdapters.StudentTableAdapter();
 			this.toFastDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.toFastDataSet1 = new ToFast.ToFastDataSet1();
@@ -50,7 +50,7 @@
 			this.Context = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Checkable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.toFastDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.toFastDataSetBindingSource)).BeginInit();
@@ -62,20 +62,21 @@
 			((System.ComponentModel.ISupportInitialize)(this.questionIndexBindingSource2)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// dataGridView1
+			// dataGridView
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.QuestionTime,
             this.Context,
             this.SubjectName,
             this.Checkable});
-			this.dataGridView1.Location = new System.Drawing.Point(22, 21);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowTemplate.Height = 30;
-			this.dataGridView1.Size = new System.Drawing.Size(437, 262);
-			this.dataGridView1.TabIndex = 0;
+			this.dataGridView.Location = new System.Drawing.Point(22, 21);
+			this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
+			this.dataGridView.Name = "dataGridView";
+			this.dataGridView.RowTemplate.Height = 30;
+			this.dataGridView.Size = new System.Drawing.Size(512, 262);
+			this.dataGridView.TabIndex = 0;
+			this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
 			// 
 			// studentBindingSource
 			// 
@@ -87,35 +88,38 @@
 			this.toFastDataSet.DataSetName = "ToFastDataSet";
 			this.toFastDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// button1
+			// btnDelete
 			// 
-			this.button1.Location = new System.Drawing.Point(463, 381);
-			this.button1.Margin = new System.Windows.Forms.Padding(2);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(52, 29);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "삭제";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnDelete.Location = new System.Drawing.Point(538, 381);
+			this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(52, 29);
+			this.btnDelete.TabIndex = 2;
+			this.btnDelete.Text = "삭제";
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
-			// button3
+			// btnOk
 			// 
-			this.button3.Location = new System.Drawing.Point(463, 337);
-			this.button3.Margin = new System.Windows.Forms.Padding(2);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(52, 31);
-			this.button3.TabIndex = 4;
-			this.button3.Text = "확인";
-			this.button3.UseVisualStyleBackColor = true;
+			this.btnOk.Location = new System.Drawing.Point(538, 346);
+			this.btnOk.Margin = new System.Windows.Forms.Padding(2);
+			this.btnOk.Name = "btnOk";
+			this.btnOk.Size = new System.Drawing.Size(52, 31);
+			this.btnOk.TabIndex = 4;
+			this.btnOk.Text = "확인";
+			this.btnOk.UseVisualStyleBackColor = true;
+			this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
 			// 
-			// textBox1
+			// tbInfo
 			// 
-			this.textBox1.Location = new System.Drawing.Point(22, 309);
-			this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(437, 101);
-			this.textBox1.TabIndex = 5;
+			this.tbInfo.Location = new System.Drawing.Point(22, 309);
+			this.tbInfo.Margin = new System.Windows.Forms.Padding(2);
+			this.tbInfo.Multiline = true;
+			this.tbInfo.Name = "tbInfo";
+			this.tbInfo.ReadOnly = true;
+			this.tbInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.tbInfo.Size = new System.Drawing.Size(512, 101);
+			this.tbInfo.TabIndex = 5;
 			// 
 			// studentTableAdapter
 			// 
@@ -170,9 +174,11 @@
 			// 
 			// QuestionTime
 			// 
+			this.QuestionTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
 			this.QuestionTime.HeaderText = "작성시간";
 			this.QuestionTime.Name = "QuestionTime";
 			this.QuestionTime.ReadOnly = true;
+			this.QuestionTime.Width = 169;
 			// 
 			// Context
 			// 
@@ -196,16 +202,16 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(533, 435);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button1);
-			this.Controls.Add(this.dataGridView1);
+			this.ClientSize = new System.Drawing.Size(609, 435);
+			this.Controls.Add(this.tbInfo);
+			this.Controls.Add(this.btnOk);
+			this.Controls.Add(this.btnDelete);
+			this.Controls.Add(this.dataGridView);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "History";
 			this.Text = "History";
 			this.Load += new System.EventHandler(this.History_Load);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.toFastDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.toFastDataSetBindingSource)).EndInit();
@@ -222,10 +228,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.TextBox tbInfo;
 		private ToFastDataSet toFastDataSet;
 		private System.Windows.Forms.BindingSource studentBindingSource;
 		private ToFastDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
