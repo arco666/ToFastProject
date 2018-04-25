@@ -80,8 +80,8 @@ namespace ToFast
                tmrTimer.Start();
 
             TimeCount timeCount = new TimeCount();
-//            timeCount.StudentId = DataRepository.User.StudentId;
-            timeCount.StudentId =11;
+            timeCount.StudentId = DataRepository.User.StudentId;
+//            timeCount.StudentId =11;
             timeCount.SetTime = DateTime.Now;
             DataRepository.TimeCount.Insert(timeCount);
             
@@ -115,8 +115,8 @@ namespace ToFast
         private void btSend_Question_Click(object sender, EventArgs e)
         {
             QuestionIndex questionIndex =new QuestionIndex();
-//            questionIndex.StudentId = DataRepository.User.StudentId;
-            questionIndex.StudentId = 11;
+            questionIndex.StudentId = DataRepository.User.StudentId;
+//            questionIndex.StudentId = 11;
             questionIndex.Evaluation = 2;
             questionIndex.Anonymous = anonymous;
             questionIndex.Deletable = false;
@@ -176,6 +176,8 @@ namespace ToFast
         private void Student_FormClosed(object sender, FormClosedEventArgs e)
         {
             Data.Student student = DataRepository.User;
+//            Data.Student student = DataRepository.Student.GetFirst(x=>x.StudentId ==11);
+//            student.StudentId = 11;
             student.LogIn = false;
             DataRepository.Student.Update(student);
             
