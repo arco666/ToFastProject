@@ -34,7 +34,6 @@
             <PropertyRef Name="TimeLimit_Key" />
           </Key>
           <Property Name="TimeLimit_Key" Type="int" Nullable="false" />
-          <Property Name="CountId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -98,7 +97,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Subject_Teacher">
-          <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teacher">
@@ -110,7 +111,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TimeCount_Student">
-          <End Role="Student" Type="Self.Student" Multiplicity="1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TimeCount" Type="Self.TimeCount" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Student">
@@ -206,7 +209,6 @@
             <PropertyRef Name="TimeLimit_Key" />
           </Key>
           <Property Name="TimeLimit_Key" Type="Int32" Nullable="false" />
-          <Property Name="CountId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -276,7 +278,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TimeCount_Student">
-          <End Type="ToFastModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="ToFastModel.Student" Role="Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="ToFastModel.TimeCount" Role="TimeCount" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Student">
@@ -288,7 +292,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Subject_Teacher">
-          <End Type="ToFastModel.Teacher" Role="Teacher" Multiplicity="1" />
+          <End Type="ToFastModel.Teacher" Role="Teacher" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="ToFastModel.Subject" Role="Subject" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teacher">
@@ -334,7 +340,6 @@
           <EntitySetMapping Name="Settings">
             <EntityTypeMapping TypeName="ToFastModel.Setting">
               <MappingFragment StoreEntitySet="Setting">
-                <ScalarProperty Name="CountId" ColumnName="CountId" />
                 <ScalarProperty Name="TimeLimit_Key" ColumnName="TimeLimit_Key" />
               </MappingFragment>
             </EntityTypeMapping>
