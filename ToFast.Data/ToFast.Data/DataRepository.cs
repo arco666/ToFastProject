@@ -9,7 +9,7 @@ namespace ToFast.Data
         public static SettingData Setting { get; } = new SettingData();
         public static StudentData Student { get; } = new StudentData();
         public static SubjectData Subject { get; } = new SubjectData();
-        public static TeacherData Teacher { get; } = new TeacherData(); 
         public static TimeCountData TimeCount { get; } = new TimeCountData();
+        public static TeacherData Teacher { get; } = new TeacherData();
     }
 }

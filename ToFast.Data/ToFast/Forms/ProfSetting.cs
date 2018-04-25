@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToFast.Data;
 
 namespace ToFast
 {
@@ -20,6 +21,17 @@ namespace ToFast
         public ProfSetting()
         {
             InitializeComponent();
+        }
+        private Prof _prof;
+        public ProfSetting(Prof prof) : this()
+        {
+            _prof = prof;
+        }
+        private void tbSetNum_TextChanged(object sender, EventArgs e)
+        {
+            //새로운 분 카운트 전송 및 TimeCount 테이블 초기화
+            _prof.SetNum = Convert.ToInt32(tbSetNum.Text);
+            DataRepository.TimeCount.DeleteAll();
         }
     }
 }
