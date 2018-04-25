@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
             this.pbtnToFast = new System.Windows.Forms.PictureBox();
             this.txtQuestion = new System.Windows.Forms.TextBox();
             this.btSend_Question = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             // 
             // pbtnToFast
             // 
-            this.pbtnToFast.Image = ((System.Drawing.Image)(resources.GetObject("pbtnToFast.Image")));
             this.pbtnToFast.Location = new System.Drawing.Point(376, 9);
             this.pbtnToFast.Margin = new System.Windows.Forms.Padding(2);
             this.pbtnToFast.Name = "pbtnToFast";
