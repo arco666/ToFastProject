@@ -78,7 +78,7 @@
             // 
             // questionViewBindingSource
             // 
-            this.questionViewBindingSource.DataSource = typeof(ToFast.Data.QuestionView);
+            //this.questionViewBindingSource.DataSource = typeof(ToFast.Data.QuestionView);
             // 
             // questionIndexBindingSource
             // 

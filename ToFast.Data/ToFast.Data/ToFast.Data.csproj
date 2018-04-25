@@ -98,8 +98,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ToFast.edmx</DependentUpon>
     </Compile>
-    <Compile Include="View\QuestionIndex.cs" />
-    <Compile Include="View\QuestionView.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ToFast.edmx">
