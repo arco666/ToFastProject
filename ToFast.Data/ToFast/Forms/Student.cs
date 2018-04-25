@@ -106,6 +106,7 @@ namespace ToFast
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
         /// 작성 내용:Send_Question 버튼 클릭시 QuestionIndex 테이블에 Insert
+        ///          내용이 없으면 Insert 불가
         ///          textBox 리셋
         ///          GetByName 생성
         /// </summary>
@@ -125,7 +126,10 @@ namespace ToFast
                 = DataRepository.Student.GetByName(cbbSubject_Select.Text);
             questionIndex.TeacherId = teacherId;
             questionIndex.Context = txtQuestion.Text;
-            DataRepository.QuestionIndex.Insert(questionIndex);
+            if (txtQuestion.Text == "")
+                MessageBox.Show("메세지를 입력해주세요","");
+            else
+                DataRepository.QuestionIndex.Insert(questionIndex);
 
             txtQuestion.ResetText();
         }
