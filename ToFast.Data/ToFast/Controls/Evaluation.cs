@@ -36,7 +36,7 @@ namespace ToFast.Controls
                 btnGood.Checked = true;
             else if (questionIndex.Evaluation == 2)
                 btnNomal.Checked = true;
-            else
+            else                                 
                 btnBad.Checked = true;
         }
         
