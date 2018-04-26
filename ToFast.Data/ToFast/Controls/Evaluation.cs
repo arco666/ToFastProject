@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,16 +31,28 @@ namespace ToFast.Controls
 
         private void Evaluation_Load(object sender, EventArgs e)
         {
+            if(DesignMode)
+                return;
             CurRadioButton = btnNomal;
-            QuestionIndex questionIndex = DataRepository.QuestionIndex.GetFirst(x => x.QuestionId == _indexnumber);
-            if (questionIndex.Evaluation == 1)
-                btnGood.Checked = true;
-            else if (questionIndex.Evaluation == 2)
-                btnNomal.Checked = true;
-            else
-                btnBad.Checked = true;
         }
-        
+
+        public void RadioButtonSelection()
+        {
+            QuestionIndex questionIndex = DataRepository.QuestionIndex.GetByQuestionPK(indexnumber:_indexnumber);
+            Debug.WriteLine(questionIndex.Evaluation + " = Evaluation");
+            if (questionIndex.Evaluation == 1)
+            {
+                btnGood.Checked = true;
+            }
+            else if (questionIndex.Evaluation == 2)
+            {
+                btnNomal.Checked = true;
+            }
+            else
+            {
+                btnBad.Checked = true;
+            }
+        }
 
         private void Evaluation_Click(object sender, EventArgs e)
         {
@@ -48,7 +61,7 @@ namespace ToFast.Controls
             if (CurRadioButton != (RadioButton) sender)
             {
                 CurRadioButton = (RadioButton)sender;
-                QuestionIndex questionIndex = DataRepository.QuestionIndex.GetFirst(x => x.QuestionId == _indexnumber);
+                QuestionIndex questionIndex = DataRepository.QuestionIndex.GetByQuestionPK(indexnumber: _indexnumber);
                 if (CurRadioButton == btnGood)
                     questionIndex.Evaluation = 1;
                 else if (CurRadioButton == btnNomal)

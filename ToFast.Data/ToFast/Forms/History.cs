@@ -83,14 +83,14 @@ namespace ToFast
 
 		private string EvaluationToString(int evaluation)
 		{
-			if (evaluation == (int)Evaluation.좋아요)
-				return Evaluation.좋아요.ToString();
+		    if (evaluation == (int) Evaluation.좋아요)
+		        return "아주 좋은 질문!";
 
-			if (evaluation == (int)Evaluation.싫어요)
-				return Evaluation.싫어요.ToString();
+		    if (evaluation == (int) Evaluation.싫어요)
+		        return "예컨데, 네!";
 
-			if (evaluation == (int)Evaluation.구려)
-				return Evaluation.구려.ToString();
+		    if (evaluation == (int) Evaluation.구려)
+		        return "모욕감 스튜핏";
 
 			return null;
 		}

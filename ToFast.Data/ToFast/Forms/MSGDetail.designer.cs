@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSGDetail));
             this.btnExport = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.tbContext = new System.Windows.Forms.TextBox();
@@ -45,9 +44,10 @@
             // btnExport
             // 
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExport.Location = new System.Drawing.Point(700, 472);
+            this.btnExport.Location = new System.Drawing.Point(490, 315);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(143, 36);
+            this.btnExport.Size = new System.Drawing.Size(100, 24);
             this.btnExport.TabIndex = 6;
             this.btnExport.Text = "내보내기(.txt)";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -55,9 +55,10 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(700, 413);
+            this.btnConfirm.Location = new System.Drawing.Point(490, 275);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(143, 36);
+            this.btnConfirm.Size = new System.Drawing.Size(100, 24);
             this.btnConfirm.TabIndex = 7;
             this.btnConfirm.Text = "확 인";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -65,18 +66,20 @@
             // 
             // tbContext
             // 
-            this.tbContext.Location = new System.Drawing.Point(27, 94);
+            this.tbContext.Location = new System.Drawing.Point(19, 63);
+            this.tbContext.Margin = new System.Windows.Forms.Padding(2);
             this.tbContext.Multiline = true;
             this.tbContext.Name = "tbContext";
-            this.tbContext.Size = new System.Drawing.Size(640, 414);
+            this.tbContext.Size = new System.Drawing.Size(449, 277);
             this.tbContext.TabIndex = 9;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 32);
+            this.pictureBox1.Image = global::ToFast.Properties.Resources.KakaoTalk_20180424_150106837;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 21);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 56);
+            this.pictureBox1.Size = new System.Drawing.Size(54, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -84,21 +87,23 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(119, 52);
+            this.lbName.Location = new System.Drawing.Point(83, 35);
+            this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(68, 18);
+            this.lbName.Size = new System.Drawing.Size(49, 12);
             this.lbName.TabIndex = 11;
             this.lbName.Text = "lbName";
             // 
             // lbTime
             // 
             this.lbTime.AutoSize = true;
-            this.lbTime.Location = new System.Drawing.Point(351, 52);
+            this.lbTime.Location = new System.Drawing.Point(197, 35);
+            this.lbTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTime.Name = "lbTime";
             this.lbTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbTime.Size = new System.Drawing.Size(236, 18);
+            this.lbTime.Size = new System.Drawing.Size(30, 12);
             this.lbTime.TabIndex = 12;
-            this.lbTime.Text = "lbdfsdadfsdfsdfcdsfsdfsdfds";
+            this.lbTime.Text = "Date";
             // 
             // questionViewBindingSource
             // 
@@ -107,16 +112,17 @@
             // evaluation
             // 
             this.evaluation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.evaluation.Location = new System.Drawing.Point(683, 94);
+            this.evaluation.Location = new System.Drawing.Point(477, 63);
+            this.evaluation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.evaluation.Name = "evaluation";
-            this.evaluation.Size = new System.Drawing.Size(196, 161);
-            this.evaluation.TabIndex = 13;
+            this.evaluation.Size = new System.Drawing.Size(136, 103);
+            this.evaluation.TabIndex = 0;
             // 
             // MSGDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 545);
+            this.ClientSize = new System.Drawing.Size(624, 363);
             this.Controls.Add(this.evaluation);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.lbName);
@@ -124,7 +130,7 @@
             this.Controls.Add(this.tbContext);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnExport);
-
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MSGDetail";
             this.Text = "MSGDetail";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

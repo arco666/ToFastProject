@@ -67,5 +67,17 @@ namespace ToFast.Data
 			}
 
 		}
+
+        public QuestionIndex GetByQuestionPK(int indexnumber)
+        {
+            using (ToFastEntities context = new ToFastEntities())
+            {
+                return (from x in context.QuestionIndexes
+                        where x.QuestionId == indexnumber
+                         select x)
+                    .ToList()
+                    .FirstOrDefault();
+            }
+        }
     }
 }

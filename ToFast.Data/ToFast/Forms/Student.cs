@@ -47,6 +47,13 @@ namespace ToFast
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// <summary>
+        /// 작성자 : 대한
+        /// 작성 일시 : 2018-04-26 13:01
+        /// 작성 내용:첫번째 콤보가 자동 선택된다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboAdd()
         {
             var subjects = DataRepository.Subject.GetSubjectAllNames();
@@ -54,6 +61,7 @@ namespace ToFast
             {
                 cbbSubject_Select.Items.Add(nameSubject);
             }
+            cbbSubject_Select.Text = cbbSubject_Select.Items[0].ToString();
         }
         /// <summary>
         /// 작성자 : 장기열
@@ -65,27 +73,6 @@ namespace ToFast
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private bool timerCheck = false;
-        private void pbtnToFast_Click(object sender, EventArgs e)
-        {
-            
-            if(setting ==null)
-                return;
-
-            if (timerCheck)
-            {
-                return;
-            }
-            timerCheck = !timerCheck;
-            lbTimer.Text = (setting.TimeLimit_Key*60).ToString();
-               tmrTimer.Start();
-
-            TimeCount timeCount = new TimeCount();
-            timeCount.StudentId = DataRepository.User.StudentId;
-//            timeCount.StudentId =11;
-            timeCount.SetTime = DateTime.Now;
-            DataRepository.TimeCount.Insert(timeCount);
-            
-        }
         /// <summary>
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
@@ -194,5 +181,25 @@ namespace ToFast
 			History from = new History();
 			from.Show();
 		}
-	}
+        
+        private void btnToFast_Click(object sender, EventArgs e)
+        {
+            if (setting == null)
+                return;
+
+            if (timerCheck)
+            {
+                return;
+            }
+            timerCheck = !timerCheck;
+            lbTimer.Text = (setting.TimeLimit_Key * 60).ToString();
+            tmrTimer.Start();
+
+            TimeCount timeCount = new TimeCount();
+            timeCount.StudentId = DataRepository.User.StudentId;
+            //            timeCount.StudentId =11;
+            timeCount.SetTime = DateTime.Now;
+            DataRepository.TimeCount.Insert(timeCount);
+        }
+    }
 }

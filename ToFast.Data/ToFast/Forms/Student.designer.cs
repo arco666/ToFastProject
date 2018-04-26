@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
-
-            this.pbtnToFast = new System.Windows.Forms.PictureBox();
             this.txtQuestion = new System.Windows.Forms.TextBox();
             this.btSend_Question = new System.Windows.Forms.Button();
             this.ckbAnonymous = new System.Windows.Forms.CheckBox();
@@ -41,22 +38,10 @@
             this.cbbSubject_Select = new System.Windows.Forms.ComboBox();
             this.subjectBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pbtnToFast)).BeginInit();
+            this.btnToFast = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbtnToFast
-            // 
-            this.pbtnToFast.Image = ((System.Drawing.Image)(resources.GetObject("pbtnToFast.Image")));
-            this.pbtnToFast.Location = new System.Drawing.Point(376, 9);
-            this.pbtnToFast.Margin = new System.Windows.Forms.Padding(2);
-            this.pbtnToFast.Name = "pbtnToFast";
-            this.pbtnToFast.Size = new System.Drawing.Size(55, 43);
-            this.pbtnToFast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbtnToFast.TabIndex = 2;
-            this.pbtnToFast.TabStop = false;
-            this.pbtnToFast.Click += new System.EventHandler(this.pbtnToFast_Click);
             // 
             // txtQuestion
             // 
@@ -132,54 +117,43 @@
             // subjectBindingSource
             // 
             this.subjectBindingSource.DataSource = typeof(ToFast.Data.Subject);
-//>>>>>>> jky수정본1
+            // 
+            // btnToFast
+            // 
+            this.btnToFast.BackgroundImage = global::ToFast.Properties.Resources.KakaoTalk_20180424_150106837;
+            this.btnToFast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnToFast.Location = new System.Drawing.Point(372, 9);
+            this.btnToFast.Name = "btnToFast";
+            this.btnToFast.Size = new System.Drawing.Size(56, 45);
+            this.btnToFast.TabIndex = 9;
+            this.btnToFast.UseVisualStyleBackColor = true;
+            this.btnToFast.Click += new System.EventHandler(this.btnToFast_Click);
             // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-//<<<<<<< HEAD
-//            this.ClientSize = new System.Drawing.Size(634, 315);
-//            this.Controls.Add(this.btnViewHistory);
-//            this.Controls.Add(this.checkboxAnonymous);
-//            this.Controls.Add(this.btnSend);
-//            this.Controls.Add(this.textbox);
-//            this.Controls.Add(this.picture);
-//            this.Name = "Student";
-//            this.Text = "Student";
-//            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
-//=======
             this.ClientSize = new System.Drawing.Size(444, 210);
+            this.Controls.Add(this.btnToFast);
             this.Controls.Add(this.cbbSubject_Select);
             this.Controls.Add(this.lbTimer);
             this.Controls.Add(this.btHistrory);
             this.Controls.Add(this.ckbAnonymous);
             this.Controls.Add(this.btSend_Question);
             this.Controls.Add(this.txtQuestion);
-            this.Controls.Add(this.pbtnToFast);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Student";
             this.Text = "Student";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Student_FormClosed);
             this.Load += new System.EventHandler(this.Student_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbtnToFast)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();
-//>>>>>>> jky수정본1
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-//<<<<<<< HEAD
-//        private System.Windows.Forms.PictureBox picture;
-//        private System.Windows.Forms.TextBox textbox;
-//        private System.Windows.Forms.Button btnSend;
-//        private System.Windows.Forms.CheckBox checkboxAnonymous;
-//        private System.Windows.Forms.Button btnViewHistory;
-//=======
-        private System.Windows.Forms.PictureBox pbtnToFast;
         private System.Windows.Forms.TextBox txtQuestion;
         private System.Windows.Forms.Button btSend_Question;
         private System.Windows.Forms.CheckBox ckbAnonymous;
@@ -189,6 +163,7 @@
         private System.Windows.Forms.ComboBox cbbSubject_Select;
         private System.Windows.Forms.BindingSource subjectBindingSource;
         private System.Windows.Forms.BindingSource subjectBindingSource1;
-//>>>>>>> jky수정본1
+        private System.Windows.Forms.Button btnToFast;
+        //>>>>>>> jky수정본1
     }
 }

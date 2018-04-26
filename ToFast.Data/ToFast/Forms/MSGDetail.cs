@@ -27,12 +27,12 @@ namespace ToFast
             lbTime.Text = questionView.Time.ToString();
             tbContext.Text = questionView.Content;
             evaluation.SetIndexNumber(questionView.NO);
+            evaluation.RadioButtonSelection();
 
         }
         
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("대한아 모르겠어.");
             Close();
         }
 
@@ -40,6 +40,5 @@ namespace ToFast
         {
             Close();
         }
-        
     }
 }

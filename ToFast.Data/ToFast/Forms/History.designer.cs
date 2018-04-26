@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.QuestionTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Context = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Checkable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
@@ -38,10 +42,6 @@
             this.questionIndexBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionIndexBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.questionIndexBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.QuestionTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Context = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Checkable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toFastDataSetBindingSource)).BeginInit();
@@ -61,10 +61,40 @@
             this.dataGridView.Location = new System.Drawing.Point(22, 21);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 30;
             this.dataGridView.Size = new System.Drawing.Size(512, 262);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // QuestionTime
+            // 
+            this.QuestionTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.QuestionTime.HeaderText = "작성시간";
+            this.QuestionTime.Name = "QuestionTime";
+            this.QuestionTime.ReadOnly = true;
+            this.QuestionTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QuestionTime.Width = 169;
+            // 
+            // Context
+            // 
+            this.Context.HeaderText = "내용";
+            this.Context.Name = "Context";
+            this.Context.ReadOnly = true;
+            this.Context.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.HeaderText = "과목명";
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
+            this.SubjectName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Checkable
+            // 
+            this.Checkable.HeaderText = "확인여부";
+            this.Checkable.Name = "Checkable";
+            this.Checkable.ReadOnly = true;
             // 
             // studentBindingSource
             // 
@@ -114,35 +144,6 @@
             // questionIndexBindingSource2
             // 
             this.questionIndexBindingSource2.DataMember = "QuestionIndex";
-            // 
-            // QuestionTime
-            // 
-            this.QuestionTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.QuestionTime.HeaderText = "작성시간";
-            this.QuestionTime.Name = "QuestionTime";
-            this.QuestionTime.ReadOnly = true;
-            this.QuestionTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.QuestionTime.Width = 169;
-            // 
-            // Context
-            // 
-            this.Context.HeaderText = "내용";
-            this.Context.Name = "Context";
-            this.Context.ReadOnly = true;
-            this.Context.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.HeaderText = "과목명";
-            this.SubjectName.Name = "SubjectName";
-            this.SubjectName.ReadOnly = true;
-            this.SubjectName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Checkable
-            // 
-            this.Checkable.HeaderText = "확인여부";
-            this.Checkable.Name = "Checkable";
-            this.Checkable.ReadOnly = true;
             // 
             // History
             // 
