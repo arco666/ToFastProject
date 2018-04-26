@@ -11,6 +11,9 @@ namespace ToFast
     {
         /// <summary>
         /// The main entry point for the application.
+        /// 작성자 :   박진수
+        /// 작성일 :   04-25 16:30
+        /// 수정내용 : prof 내부코드 조작, profsetting 내부코드 조작, alarm 폼 신설
         /// </summary>
         [STAThread]
         static void Main()

@@ -39,6 +39,7 @@
             this.questionTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.questionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bgwWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfContents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionViewBindingSource)).BeginInit();
@@ -112,17 +113,26 @@
             this.questionIdDataGridViewTextBoxColumn.HeaderText = "No.";
             this.questionIdDataGridViewTextBoxColumn.Name = "questionIdDataGridViewTextBoxColumn";
             // 
+            // bgwWorker
+            // 
+            this.bgwWorker.WorkerReportsProgress = true;
+            this.bgwWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwWorker_DoWork);
+            this.bgwWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgwWorker_ProgressChanged);
+            this.bgwWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwWorker_RunWorkerCompleted);
+            // 
             // Prof
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 603);
             this.Controls.Add(this.dgvProfContents);
             this.Controls.Add(this.pictureboxSetting);
 
             this.Name = "Prof";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prof";
             this.Load += new System.EventHandler(this.Prof_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Prof_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfContents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionViewBindingSource)).EndInit();
@@ -142,5 +152,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn questionTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contextDataGridViewTextBoxColumn;
+        private System.ComponentModel.BackgroundWorker bgwWorker;
     }
 }

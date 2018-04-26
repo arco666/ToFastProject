@@ -163,7 +163,7 @@ namespace ToFast.Data
 //                return context.Set<T>().FirstOrDefault(x => predicate(x));
                 if (predicate != null)
                     quary.Where(predicate);
-                return context.Set<T>().FirstOrDefault();
+                return quary.FirstOrDefault();
             }
         }
     }
