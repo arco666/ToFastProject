@@ -7,6 +7,11 @@ using System.Linq.Expressions;
 
 namespace ToFast.Data
 {
+    /// <summary>
+    /// 작성자 :   박진수
+    /// 작성일 :   04-26 14:32
+    /// 수정내용 : 40, 41번줄 주석처리
+    /// </summary>
     public class EntityDataInitializer
     {
         public static string ConnectionString { get; set; } // <-- "name=ToFastEntities"
@@ -32,7 +37,8 @@ namespace ToFast.Data
                 if (predicate != null)
                     query = query.Where(predicate);
 
-                query = GetOrderedQuery(query);
+                //이줄 뭔가 이상해서 주석처리했음
+                //query = GetOrderedQuery(query);
 
                 if (startRowIndex != 0)
                     query = query.Skip(startRowIndex);
