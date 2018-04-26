@@ -15,6 +15,7 @@ namespace ToFast
         [STAThread]
         static void Main()
         {
+            //push test
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EntityDataInitializer.ConnectionString = "name=ToFastEntities";
