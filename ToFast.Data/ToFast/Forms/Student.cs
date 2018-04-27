@@ -170,17 +170,6 @@ namespace ToFast
             
           
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-		private void button2_Click(object sender, EventArgs e)
-		{
-			History from = new History();
-			from.Show();
-		}
         
         private void btnToFast_Click(object sender, EventArgs e)
         {

@@ -39,12 +39,11 @@ namespace ToFast
 		{
 			this.Visible = false;
 		}
-
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("정말 삭제 하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
 			{
-				if (index < 0 && questionIndex == null)
+				if (index < 0 || questionIndex == null)
 					return;
 
 				questionIndex.Deletable = true;

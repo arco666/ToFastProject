@@ -39,7 +39,6 @@ namespace ToFast.Controls
         public void RadioButtonSelection()
         {
             QuestionIndex questionIndex = DataRepository.QuestionIndex.GetByQuestionPK(indexnumber:_indexnumber);
-            Debug.WriteLine(questionIndex.Evaluation + " = Evaluation");
             if (questionIndex.Evaluation == 1)
             {
                 btnGood.Checked = true;

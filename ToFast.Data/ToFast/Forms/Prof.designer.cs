@@ -32,19 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prof));
             this.pictureboxSetting = new System.Windows.Forms.PictureBox();
             this.dgvProfContents = new System.Windows.Forms.DataGridView();
+            this.questionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionIndexBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.questionViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionIndexBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.questionIndexBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.contextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.questionTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.questionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bgwWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfContents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionIndexBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionIndexBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionIndexBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureboxSetting
@@ -77,29 +77,11 @@
             this.dgvProfContents.TabIndex = 3;
             this.dgvProfContents.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfContents_CellDoubleClick);
             // 
-            // questionViewBindingSource
+            // questionIdDataGridViewTextBoxColumn
             // 
-            this.questionViewBindingSource.DataSource = typeof(ToFast.Data.QuestionView);
-            // 
-            // questionIndexBindingSource
-            // 
-            this.questionIndexBindingSource.DataSource = typeof(ToFast.Data.QuestionIndex);
-            // 
-            // questionIndexBindingSource1
-            // 
-            this.questionIndexBindingSource1.DataSource = typeof(ToFast.Data.QuestionIndex);
-            // 
-            // contextDataGridViewTextBoxColumn
-            // 
-            this.contextDataGridViewTextBoxColumn.DataPropertyName = "Context";
-            this.contextDataGridViewTextBoxColumn.HeaderText = "내용";
-            this.contextDataGridViewTextBoxColumn.Name = "contextDataGridViewTextBoxColumn";
-            // 
-            // questionTimeDataGridViewTextBoxColumn
-            // 
-            this.questionTimeDataGridViewTextBoxColumn.DataPropertyName = "QuestionTime";
-            this.questionTimeDataGridViewTextBoxColumn.HeaderText = "시간";
-            this.questionTimeDataGridViewTextBoxColumn.Name = "questionTimeDataGridViewTextBoxColumn";
+            this.questionIdDataGridViewTextBoxColumn.DataPropertyName = "QuestionId";
+            this.questionIdDataGridViewTextBoxColumn.HeaderText = "No.";
+            this.questionIdDataGridViewTextBoxColumn.Name = "questionIdDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -107,11 +89,29 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "학생명";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // questionIdDataGridViewTextBoxColumn
+            // questionTimeDataGridViewTextBoxColumn
             // 
-            this.questionIdDataGridViewTextBoxColumn.DataPropertyName = "QuestionId";
-            this.questionIdDataGridViewTextBoxColumn.HeaderText = "No.";
-            this.questionIdDataGridViewTextBoxColumn.Name = "questionIdDataGridViewTextBoxColumn";
+            this.questionTimeDataGridViewTextBoxColumn.DataPropertyName = "QuestionTime";
+            this.questionTimeDataGridViewTextBoxColumn.HeaderText = "시간";
+            this.questionTimeDataGridViewTextBoxColumn.Name = "questionTimeDataGridViewTextBoxColumn";
+            // 
+            // contextDataGridViewTextBoxColumn
+            // 
+            this.contextDataGridViewTextBoxColumn.DataPropertyName = "Context";
+            this.contextDataGridViewTextBoxColumn.HeaderText = "내용";
+            this.contextDataGridViewTextBoxColumn.Name = "contextDataGridViewTextBoxColumn";
+            // 
+            // questionIndexBindingSource1
+            // 
+            this.questionIndexBindingSource1.DataSource = typeof(ToFast.Data.QuestionIndex);
+            // 
+            // questionViewBindingSource
+            // 
+            this.questionViewBindingSource.DataSource = typeof(ToFast.Data.QuestionView);
+            // 
+            // questionIndexBindingSource
+            // 
+            this.questionIndexBindingSource.DataSource = typeof(ToFast.Data.QuestionIndex);
             // 
             // bgwWorker
             // 
@@ -127,17 +127,16 @@
             this.ClientSize = new System.Drawing.Size(800, 603);
             this.Controls.Add(this.dgvProfContents);
             this.Controls.Add(this.pictureboxSetting);
-
             this.Name = "Prof";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prof";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Prof_FormClosed);
             this.Load += new System.EventHandler(this.Prof_Load);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Prof_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfContents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionIndexBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionIndexBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionIndexBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

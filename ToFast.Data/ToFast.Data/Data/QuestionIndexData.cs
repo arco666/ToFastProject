@@ -79,5 +79,14 @@ namespace ToFast.Data
                     .FirstOrDefault();
             }
         }
+
+        public void DeleteRange(List<QuestionIndex> delList)
+        {
+            using (ToFastEntities context = new ToFastEntities())
+            {
+                context.QuestionIndexes.RemoveRange(delList);
+                context.SaveChanges();
+            }
+        }
     }
 }
