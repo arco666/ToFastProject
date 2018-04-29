@@ -31,13 +31,19 @@ namespace ToFast.Forms
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bgwCallAlarm = new System.ComponentModel.BackgroundWorker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // bgwCallAlarm
+            // 
+            this.bgwCallAlarm.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCallAlarm_DoWork);
+            this.bgwCallAlarm.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwCallAlarm_RunWorkerCompleted);
+            // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::ToFast.Properties.Resources.KakaoTalk_20180424_150106837;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -46,11 +52,6 @@ namespace ToFast.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // bgwCallAlarm
-            // 
-            this.bgwCallAlarm.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCallAlarm_DoWork);
-            this.bgwCallAlarm.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwCallAlarm_RunWorkerCompleted);
             // 
             // Alarm
             // 

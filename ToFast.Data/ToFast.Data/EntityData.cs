@@ -31,8 +31,7 @@ namespace ToFast.Data
 
                 if (predicate != null)
                     query = query.Where(predicate);
-
-                query = GetOrderedQuery(query);
+                    
 
                 if (startRowIndex != 0)
                     query = query.Skip(startRowIndex);
@@ -43,11 +42,7 @@ namespace ToFast.Data
                 return query.ToList();
             }
         }
-
-        protected virtual IQueryable<T> GetOrderedQuery(IQueryable<T> query)
-        {
-            throw new NotImplementedException("EntityData.GetOrderedQuery");
-        }
+        
 
         public List<T> Get<U>(
             Expression<Func<T, bool>> predicate = null, 

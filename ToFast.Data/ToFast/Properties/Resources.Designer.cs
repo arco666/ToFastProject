@@ -63,9 +63,39 @@ namespace ToFast.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Design_Form_Default_001 {
+            get {
+                object obj = ResourceManager.GetObject("Design_Form_Default_001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_Form_Default_002 {
+            get {
+                object obj = ResourceManager.GetObject("Design_Form_Default_002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap KakaoTalk_20180424_150106837 {
             get {
                 object obj = ResourceManager.GetObject("KakaoTalk_20180424_150106837", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TextBox_Color001 {
+            get {
+                object obj = ResourceManager.GetObject("TextBox_Color001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

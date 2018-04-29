@@ -33,7 +33,7 @@ namespace ToFast
             TotalStudent = DataRepository.Student.GetCount(x => x.StudentId > 0);
             InitializeComponent();
             //로그인 및 총인원 표시
-            lbCurAndTotal.Text = LoginStudent.ToString()+"(총 "+TotalStudent.ToString()+")";
+            lbCurAndTotal.Text = LoginStudent.ToString() + "(총 " + TotalStudent.ToString() + ")";
             Setting setting = DataRepository.Setting.GetFirst(null);
             //현재 설정된 인원 하한수 표시
             tbStudentLimit.Text = Properties.Settings.Default.StudentLimit.ToString();
@@ -47,11 +47,14 @@ namespace ToFast
             else
                 cbMute.Checked = false;
         }
+
         private Prof _prof;
+
         public ProfSetting(Prof prof) : this()
         {
             _prof = prof;
         }
+
         private void btnLocReset_Click(object sender, EventArgs e)
         {
             //TODO:로케이션 각각의 위치 쿼리 및 초기화
@@ -80,6 +83,11 @@ namespace ToFast
         {
             DataRepository.Setting.GetFirst(null).TimeLimit_Key = Convert.ToInt32(numTime.Value);
             DataRepository.TimeCount.DeleteAll();
+        }
+
+        private void tbStudentLimit_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.StudentLimit = Convert.ToInt32(tbStudentLimit.Text);
         }
     }
 }

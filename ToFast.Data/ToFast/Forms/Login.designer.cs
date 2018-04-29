@@ -41,84 +41,102 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(59, 103);
+            this.label3.Location = new System.Drawing.Point(12, 218);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 12);
+            this.label3.Size = new System.Drawing.Size(66, 18);
             this.label3.TabIndex = 13;
             this.label3.Text = "구 분";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbbType
             // 
+            this.cbbType.BackColor = System.Drawing.Color.LavenderBlush;
+            this.cbbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbbType.Font = new System.Drawing.Font("GulimChe", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbbType.FormattingEnabled = true;
             this.cbbType.Items.AddRange(new object[] {
             "교수님용",
             "학생용"});
-            this.cbbType.Location = new System.Drawing.Point(115, 101);
+            this.cbbType.Location = new System.Drawing.Point(82, 216);
             this.cbbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbbType.Name = "cbbType";
-            this.cbbType.Size = new System.Drawing.Size(71, 20);
+            this.cbbType.Size = new System.Drawing.Size(107, 20);
             this.cbbType.TabIndex = 8;
-            this.cbbType.Text = "학생용";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(190, 129);
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BackgroundImage = global::ToFast.Properties.Resources.Design_Form_Default_001;
+            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.Font = new System.Drawing.Font("Gill Sans MT", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btnLogin.Location = new System.Drawing.Point(193, 228);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(54, 43);
+            this.btnLogin.Size = new System.Drawing.Size(76, 46);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "&Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(115, 154);
+            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPassword.Location = new System.Drawing.Point(82, 269);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(71, 21);
+            this.tbPassword.Size = new System.Drawing.Size(107, 21);
             this.tbPassword.TabIndex = 10;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(115, 129);
+            this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbName.Location = new System.Drawing.Point(82, 244);
             this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(71, 21);
+            this.tbName.Size = new System.Drawing.Size(107, 21);
             this.tbName.TabIndex = 9;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(32, 161);
+            this.label2.Location = new System.Drawing.Point(12, 270);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 12);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "비밀 번호";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(59, 136);
+            this.label1.Location = new System.Drawing.Point(12, 245);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 12);
+            this.label1.Size = new System.Drawing.Size(66, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "이 름";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbIcon
             // 
-            this.pbIcon.BackColor = System.Drawing.SystemColors.Control;
+            this.pbIcon.BackColor = System.Drawing.Color.Transparent;
+            this.pbIcon.BackgroundImage = global::ToFast.Properties.Resources.Design_Form_Default_002;
+            this.pbIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbIcon.Image = global::ToFast.Properties.Resources.KakaoTalk_20180424_150106837;
-            this.pbIcon.Location = new System.Drawing.Point(34, 14);
+            this.pbIcon.Location = new System.Drawing.Point(34, -2);
             this.pbIcon.Name = "pbIcon";
-            this.pbIcon.Size = new System.Drawing.Size(210, 74);
+            this.pbIcon.Size = new System.Drawing.Size(210, 188);
             this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbIcon.TabIndex = 14;
             this.pbIcon.TabStop = false;
@@ -127,7 +145,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(277, 213);
+            this.BackgroundImage = global::ToFast.Properties.Resources.Design_Form_Default_002;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(280, 343);
             this.Controls.Add(this.pbIcon);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbbType);
@@ -136,6 +156,7 @@
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Login";

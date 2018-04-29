@@ -70,5 +70,15 @@ namespace ToFast.Properties {
                 this["StudentLimit"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.100.124;Initial Catalog=ToFast;User ID=toFast;Password=123")]
+        public string ToFastConnectionString {
+            get {
+                return ((string)(this["ToFastConnectionString"]));
+            }
+        }
     }
 }

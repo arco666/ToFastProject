@@ -20,8 +20,6 @@ namespace ToFast
     /// </summary>
     public partial class Prof : Form
     {
-        public int StudentLimit { get; set; } = 0;
-
         public Prof()
         {
             InitializeComponent();
@@ -40,23 +38,26 @@ namespace ToFast
                 return;
             // 데이터 그리드 뷰를 채운다.
             List<QuestionIndex> questionViews = DataRepository.QuestionIndex.GetQuestionViewProfAll();
+
             StudentRequestDelete(questionViews);
             ExpiresDelete(questionViews);
+
             dgvProfContents.DataSource = questionViews;
-            bgwWorker.RunWorkerAsync(0);
+            bgwWorker.RunWorkerAsync();
         }
 
         private void StudentRequestDelete(List<QuestionIndex> questionViews)
         {
             DateTime now = DateTime.Today;
-            List<QuestionIndex> delList = questionViews.Where(x => (now.Day - x.QuestionTime.Day) >= 1).ToList();
+            List<QuestionIndex> delList = questionViews.Where(x => x.Deletable).ToList();
+            delList = delList.Where(x => (now.DayOfYear - x.QuestionTime.DayOfYear) >= 1).ToList();
             DataRepository.QuestionIndex.DeleteRange(delList: delList);
         }
 
         private void ExpiresDelete(List<QuestionIndex> questionViews)
         {
             DateTime now = DateTime.Today;
-            List<QuestionIndex> delList = questionViews.Where(x => (now.Day - x.QuestionTime.Day) > 7).ToList();
+            List<QuestionIndex> delList = questionViews.Where(x => (now.DayOfYear - x.QuestionTime.DayOfYear) > 7).ToList();
             DataRepository.QuestionIndex.DeleteRange(delList: delList);
         }
 
@@ -80,6 +81,8 @@ namespace ToFast
         private void dgvProfContents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView gridView = (DataGridView) sender;
+            if(gridView.Rows[0].Cells[0].Value.ToString() == "0")
+                return;
             QuestionView questionView = new QuestionView
             {
                 NO = (int) gridView.Rows[e.RowIndex].Cells[0].Value,
@@ -93,19 +96,29 @@ namespace ToFast
 
         private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (bgwWorker.CancellationPending)
+            Debug.WriteLine("bgwWorker_DoWork");
+            do
             {
-                e.Cancel = true;
-                return;
-            }
+                //TimeCount 테이블 전체 쿼리
+                List<TimeCount> timecount = DataRepository.TimeCount.GetAll(null);
+                //TimeLimit_key 쿼리
+                Setting setting = DataRepository.Setting.GetFirst(null);
 
-            Setting setting = DataRepository.Setting.GetFirst(null);
-            if (DataRepository.TimeCount.GetCount
-                (x => (DateTime.Now - x.SetTime).Minutes <= setting.TimeLimit_Key) >= StudentLimit)
-            {
-                bgwWorker.ReportProgress(0);
+                int Hands = 0;
+                //TimeLimit_Key보다 분이 작게 나오면 손든걸로 취급해 카운트
+                foreach (TimeCount x in timecount)
+                {
+                    if ((DateTime.Now - x.SetTime).Minutes <= setting.TimeLimit_Key)
+                        Hands++;
+                }
+                //카운트한 숫자가 학생 하한보다 크면 하단 실행
+                if (Hands >= Properties.Settings.Default.StudentLimit)
+                {
+                    bgwWorker.ReportProgress(0);
+                }
+                Thread.Sleep(3000);
             }
-            Thread.Sleep(3000);
+            while (!bgwWorker.CancellationPending);
         }
 
         //baseThread
@@ -128,8 +141,8 @@ namespace ToFast
         }
 
         //EndThread
-        private void bgwWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-        }
+//        private void bgwWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+//        {
+//        }
     }
 }

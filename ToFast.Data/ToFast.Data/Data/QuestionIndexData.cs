@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,7 +85,12 @@ namespace ToFast.Data
         {
             using (ToFastEntities context = new ToFastEntities())
             {
-                context.QuestionIndexes.RemoveRange(delList);
+                if(delList.Count <= 0)
+                    return;
+                foreach (var questionIndex in delList)
+                {
+                    context.Entry(questionIndex).State = EntityState.Deleted;
+                }
                 context.SaveChanges();
             }
         }

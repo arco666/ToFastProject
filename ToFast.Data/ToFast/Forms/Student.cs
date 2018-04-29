@@ -34,7 +34,6 @@ namespace ToFast
         /// <param name="e"></param>
         private void Student_Load(object sender, EventArgs e)
         {
-
             setting = DataRepository.Setting.GetFirst(null);
             comboAdd();
         }

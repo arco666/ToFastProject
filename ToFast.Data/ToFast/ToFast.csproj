@@ -99,6 +99,24 @@
     <Compile Include="Forms\Student.designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TrayIcon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrayIcon.Designer.cs">
+      <DependentUpon>TrayIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrayProfIcon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrayProfIcon.Designer.cs">
+      <DependentUpon>TrayProfIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrayStudentIcon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrayStudentIcon.Designer.cs">
+      <DependentUpon>TrayStudentIcon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Alarm.resx">
@@ -125,6 +143,9 @@
     <EmbeddedResource Include="Forms\Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrayIcon.resx">
+      <DependentUpon>TrayIcon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,6 +184,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\KakaoTalk_20180424_150106837.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design_Form_Default_001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design_Form_Default_002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBox_Color001.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

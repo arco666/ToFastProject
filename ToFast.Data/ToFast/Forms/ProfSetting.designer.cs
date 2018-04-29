@@ -41,7 +41,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numTime)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureboxIcon
+            // pictureBox1
             // 
             this.pictureBox1.Image = global::ToFast.Properties.Resources.KakaoTalk_20180424_150106837;
             this.pictureBox1.Location = new System.Drawing.Point(31, 26);
@@ -59,6 +59,7 @@
             this.tbStudentLimit.Name = "tbStudentLimit";
             this.tbStudentLimit.Size = new System.Drawing.Size(71, 21);
             this.tbStudentLimit.TabIndex = 2;
+            this.tbStudentLimit.TextChanged += new System.EventHandler(this.tbStudentLimit_TextChanged);
             // 
             // label1
             // 
