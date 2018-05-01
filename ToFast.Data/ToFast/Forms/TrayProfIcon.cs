@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using ToFast.Data;
+using ToFast.Forms;
 
 namespace ToFast
 {
@@ -16,15 +17,21 @@ namespace ToFast
         {
             if (Properties.Settings.Default.Mute == false)
             {
-                Forms.Alarm alarm = new Forms.Alarm();
-                alarm.Show();
+                if (new Alarm().OneFormShow() is Alarm alarm)
+                    alarm.Show();
             }
+        }
+        public override void TrayIcon_Load()
+        {
+            if (DesignMode)
+                return;
+            MainFormShow();
         }
 
         public override void MainFormShow()
         {
-            Prof form = new Prof();
-            form.Show();
+            if (new Prof().OneFormShow() is Prof form)
+                form.Show();
         }
 
         public override void Worker_DoWork()
@@ -37,15 +44,15 @@ namespace ToFast
                 //TimeLimit_key 쿼리
                 Setting setting = DataRepository.Setting.GetFirst(null);
 
-                int Hands = 0;
+                int hands = 0;
                 //TimeLimit_Key보다 분이 작게 나오면 손든걸로 취급해 카운트
-                foreach (TimeCount x in timecount)
+                foreach (var x in timecount)
                 {
                     if ((DateTime.Now - x.SetTime).Minutes <= setting.TimeLimit_Key)
-                        Hands++;
+                        hands++;
                 }
                 //카운트한 숫자가 학생 하한보다 크면 하단 실행
-                if (Hands >= Properties.Settings.Default.StudentLimit)
+                if (hands >= Properties.Settings.Default.StudentLimit)
                 {
                     bgwWorker.ReportProgress(0);
                 }

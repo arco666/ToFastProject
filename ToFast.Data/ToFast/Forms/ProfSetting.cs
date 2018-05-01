@@ -64,7 +64,7 @@ namespace ToFast
         {
             Setting setting = DataRepository.Setting.GetFirst(null);
             if (setting == null)
-                MessageBox.Show("빈 값을 저장할 수 없습니다");
+                MessageBox.Show(@"빈 값을 저장할 수 없습니다");
             //알람 학생수 불리오기
             tbStudentLimit.Text = Properties.Settings.Default.StudentLimit.ToString();
             //체크박스 저장

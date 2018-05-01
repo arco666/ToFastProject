@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows.Forms;
 using ToFast.Data;
-using ToFast.Forms;
+using Version = System.Version;
 
 namespace ToFast
 {
@@ -27,6 +21,40 @@ namespace ToFast
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void Login_Shown(object sender, EventArgs e)
+        {
+            Assembly assemObj = Assembly.GetExecutingAssembly();
+            Version v = assemObj.GetName().Version;
+            Data.Version versionBase = new Data.Version
+            {
+                Major = v.Major,         // 주버전
+                Minor = v.Minor,         // 부버전
+                Build = v.Build,         // 빌드번호
+                Revision = v.Revision    // 수정번호
+            };
+            Data.Version checkVersion = DataRepository.Version_Data.GetFirst(null);
+
+            if (!CompareVersion(versionBase: versionBase, checkVersion: checkVersion))
+            {
+                MessageBox.Show(@"최신 버전이 아닙니다.");
+                Application.Exit();
+            }
+        }
+
+        private bool CompareVersion(Data.Version versionBase, Data.Version checkVersion)
+        {
+            bool check=true;
+            if (versionBase.Major != checkVersion.Major)
+                check = false;
+            else if (versionBase.Minor != checkVersion.Minor)
+                check = false;
+            else if(versionBase.Build != checkVersion.Build)
+                check = false;
+            else if (versionBase.Revision != checkVersion.Revision)
+                check = false;
+            return check;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -58,6 +86,7 @@ namespace ToFast
                     MessageBox.Show(@"아이디 또는 비밀번호가 다릅니다. 확인해주세요.");
                     return;
                 }
+
                 if (student.LogIn == true)
                 {
                     MessageBox.Show(@"이미 로그인 중인 아이디입니다.");

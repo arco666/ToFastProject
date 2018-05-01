@@ -125,6 +125,7 @@
             this.cbbSubject_Select.Name = "cbbSubject_Select";
             this.cbbSubject_Select.Size = new System.Drawing.Size(139, 22);
             this.cbbSubject_Select.TabIndex = 8;
+            this.cbbSubject_Select.Visible = false;
             // 
             // subjectBindingSource1
             // 
@@ -165,8 +166,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Student";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Student_FormClosed);
             this.Load += new System.EventHandler(this.Student_Load);
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();

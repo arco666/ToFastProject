@@ -14,5 +14,6 @@ namespace ToFast.Data
 
         public static Teacher ProfessorUser { get; set; } = new Teacher();
         public static Student User { get; set; } = new Student();
+        public static VersionData Version_Data { get; } = new VersionData();
     }
 }

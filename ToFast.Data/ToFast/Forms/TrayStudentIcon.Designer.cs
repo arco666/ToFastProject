@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // TrayStudentIcon
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(0, 0);
+            this.Name = "TrayStudentIcon";
+            this.ShowInTaskbar = false;
             this.Text = "TrayStudentIcon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TrayStudentIcon_FormClosing);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

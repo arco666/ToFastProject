@@ -58,6 +58,7 @@
     <Compile Include="Data\SubjectData.cs" />
     <Compile Include="Data\TeacherData.cs" />
     <Compile Include="Data\TimeCountData.cs" />
+    <Compile Include="Data\VersionData.cs" />
     <Compile Include="Entities\QuestionIndex.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Teacher.cs" />
@@ -98,6 +99,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ToFast.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Version.cs">
+      <DependentUpon>ToFast.tt</DependentUpon>
     </Compile>
     <Compile Include="View\QuestionIndex.cs" />
     <Compile Include="View\QuestionView.cs" />

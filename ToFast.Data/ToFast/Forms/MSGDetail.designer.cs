@@ -130,6 +130,7 @@
             this.Controls.Add(this.tbContext);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnExport);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MSGDetail";
             this.Text = "MSGDetail";

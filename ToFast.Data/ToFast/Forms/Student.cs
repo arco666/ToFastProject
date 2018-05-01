@@ -25,6 +25,7 @@ namespace ToFast
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
@@ -34,34 +35,34 @@ namespace ToFast
         /// <param name="e"></param>
         private void Student_Load(object sender, EventArgs e)
         {
-            setting = DataRepository.Setting.GetFirst(null);
-            comboAdd();
+            _setting = DataRepository.Setting.GetFirst(null);
+            ComboAdd();
         }
-        private Setting setting;
+
+        private Setting _setting;
+
         /// <summary>
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
         /// 작성 내용:ComboBox(과목)에 과목이름 추가
         ///          GetSubjectAllNames 생성
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         /// <summary>
         /// 작성자 : 대한
         /// 작성 일시 : 2018-04-26 13:01
         /// 작성 내용:첫번째 콤보가 자동 선택된다.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void comboAdd()
+        private void ComboAdd()
         {
             var subjects = DataRepository.Subject.GetSubjectAllNames();
             foreach (string nameSubject in subjects)
             {
                 cbbSubject_Select.Items.Add(nameSubject);
             }
+
             cbbSubject_Select.Text = cbbSubject_Select.Items[0].ToString();
         }
+
         /// <summary>
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
@@ -69,9 +70,8 @@ namespace ToFast
         ///          시간이 남아있으면 클릭 불가
         ///          TimeCount 테이블에 클릭시간 Insert
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private bool timerCheck = false;
+        private bool _timerCheck = false;
+
         /// <summary>
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
@@ -83,11 +83,10 @@ namespace ToFast
         /// <param name="e"></param>
         private void btHistrory_Click(object sender, EventArgs e)
         {
-            History historyform= new History();
-            List<QuestionIndex> studentId = DataRepository.QuestionIndex.GetByStudentPK(studentId: 1);
-//            historyform.setGridView();
-            historyform.ShowDialog();
+            if (new History().OneFormShow() is History historyform)
+                historyform.ShowDialog();
         }
+
         /// <summary>
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
@@ -100,11 +99,11 @@ namespace ToFast
         /// <param name="e"></param>
         private void btSend_Question_Click(object sender, EventArgs e)
         {
-            QuestionIndex questionIndex =new QuestionIndex();
+            QuestionIndex questionIndex = new QuestionIndex();
             questionIndex.StudentId = DataRepository.User.StudentId;
 //            questionIndex.StudentId = 11;
             questionIndex.Evaluation = 2;
-            questionIndex.Anonymous = anonymous;
+            questionIndex.Anonymous = _anonymous;
             questionIndex.Deletable = false;
             questionIndex.Checkable = false;
             questionIndex.QuestionTime = DateTime.Now;
@@ -113,27 +112,27 @@ namespace ToFast
             questionIndex.TeacherId = teacherId;
             questionIndex.Context = txtQuestion.Text;
             if (txtQuestion.Text == "")
-                MessageBox.Show("메세지를 입력해주세요","");
+                MessageBox.Show("메세지를 입력해주세요", "");
             else
                 DataRepository.QuestionIndex.Insert(questionIndex);
 
             txtQuestion.ResetText();
         }
+
         /// <summary>
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
         /// 작성 내용: Anonymous_CheckedChanged(익명체크) 클릭 될때마다 True,False바뀜(기본값false)
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private bool anonymous = false;
+        private bool _anonymous = false;
+
         private void ckbAnonymous_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBox cb = sender as CheckBox;
-            if (cb == null)
+            if (!(sender is CheckBox cb))
                 return;
-            anonymous = cb.Checked;
+            _anonymous = cb.Checked;
         }
+
         /// <summary>
         /// 작성자 : 장기열
         /// 작성 일시 : 2018-04-25 09:03
@@ -144,43 +143,28 @@ namespace ToFast
         /// <param name="e"></param>
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
-            if((Convert.ToInt32(lbTimer.Text)) > 0)
-            lbTimer.Text = (Convert.ToInt32(lbTimer.Text) - 1).ToString();
+            if ((Convert.ToInt32(lbTimer.Text)) > 0)
+                lbTimer.Text = (Convert.ToInt32(lbTimer.Text) - 1).ToString();
             else
             {
                 tmrTimer.Stop();
-                timerCheck = !timerCheck;
+                _timerCheck = !_timerCheck;
             }
         }
-        /// <summary>
-        /// 작성자 : 장기열
-        /// 작성 일시 : 2018-04-25 09:03
-        /// 작성 내용: 폼이 꺼질때 Student테이블에 Update(Login이 false로 바뀐)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Student_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Data.Student student = DataRepository.User;
-//            Data.Student student = DataRepository.Student.GetFirst(x=>x.StudentId ==11);
-//            student.StudentId = 11;
-            student.LogIn = false;
-            DataRepository.Student.Update(student);
-            
-          
-        }
         
+
         private void btnToFast_Click(object sender, EventArgs e)
         {
-            if (setting == null)
+            if (_setting == null)
                 return;
 
-            if (timerCheck)
+            if (_timerCheck)
             {
                 return;
             }
-            timerCheck = !timerCheck;
-            lbTimer.Text = (setting.TimeLimit_Key * 60).ToString();
+
+            _timerCheck = !_timerCheck;
+            lbTimer.Text = (_setting.TimeLimit_Key * 60).ToString();
             tmrTimer.Start();
 
             TimeCount timeCount = new TimeCount();

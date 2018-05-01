@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.QuestionTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Context = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Checkable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
@@ -39,10 +43,6 @@
             this.questionIndexBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionIndexBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.questionIndexBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.QuestionTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Context = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Checkable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toFastDataSetBindingSource)).BeginInit();
@@ -57,14 +57,14 @@
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightPink;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gulim", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Fuchsia;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightPink;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Gulim", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Fuchsia;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.QuestionTime,
             this.Context,
@@ -82,6 +82,41 @@
             this.dataGridView.Size = new System.Drawing.Size(523, 284);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // QuestionTime
+            // 
+            this.QuestionTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.QuestionTime.Frozen = true;
+            this.QuestionTime.HeaderText = "작성시간";
+            this.QuestionTime.Name = "QuestionTime";
+            this.QuestionTime.ReadOnly = true;
+            this.QuestionTime.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QuestionTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QuestionTime.Width = 130;
+            // 
+            // Context
+            // 
+            this.Context.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Context.HeaderText = "내용";
+            this.Context.Name = "Context";
+            this.Context.ReadOnly = true;
+            this.Context.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.HeaderText = "과목명";
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
+            this.SubjectName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SubjectName.Width = 70;
+            // 
+            // Checkable
+            // 
+            this.Checkable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Checkable.HeaderText = "확인여부";
+            this.Checkable.Name = "Checkable";
+            this.Checkable.ReadOnly = true;
+            this.Checkable.Width = 80;
             // 
             // studentBindingSource
             // 
@@ -140,41 +175,6 @@
             // 
             this.questionIndexBindingSource2.DataMember = "QuestionIndex";
             // 
-            // QuestionTime
-            // 
-            this.QuestionTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.QuestionTime.Frozen = true;
-            this.QuestionTime.HeaderText = "작성시간";
-            this.QuestionTime.Name = "QuestionTime";
-            this.QuestionTime.ReadOnly = true;
-            this.QuestionTime.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QuestionTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.QuestionTime.Width = 130;
-            // 
-            // Context
-            // 
-            this.Context.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Context.HeaderText = "내용";
-            this.Context.Name = "Context";
-            this.Context.ReadOnly = true;
-            this.Context.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.HeaderText = "과목명";
-            this.SubjectName.Name = "SubjectName";
-            this.SubjectName.ReadOnly = true;
-            this.SubjectName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SubjectName.Width = 70;
-            // 
-            // Checkable
-            // 
-            this.Checkable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Checkable.HeaderText = "확인여부";
-            this.Checkable.Name = "Checkable";
-            this.Checkable.ReadOnly = true;
-            this.Checkable.Width = 80;
-            // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -187,6 +187,7 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "History";
             this.Text = "History";

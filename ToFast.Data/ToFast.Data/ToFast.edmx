@@ -68,6 +68,15 @@
           <Property Name="StudentId" Type="int" Nullable="false" />
           <Property Name="SetTime" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="Version">
+          <Key>
+            <PropertyRef Name="Major" />
+          </Key>
+          <Property Name="Major" Type="int" Nullable="false" />
+          <Property Name="Minor" Type="int" Nullable="false" />
+          <Property Name="Build" Type="int" Nullable="false" />
+          <Property Name="Revision" Type="int" Nullable="false" />
+        </EntityType>
         <Association Name="FK_QuestionIndex_Student">
           <End Role="Student" Type="Self.Student" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -132,6 +141,7 @@
           <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TimeCount" EntityType="Self.TimeCount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Version" EntityType="Self.Version" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_QuestionIndex_Student" Association="Self.FK_QuestionIndex_Student">
             <End Role="Student" EntitySet="Student" />
             <End Role="QuestionIndex" EntitySet="QuestionIndex" />
@@ -161,6 +171,7 @@
           <EntitySet Name="Subjects" EntityType="ToFastModel.Subject" />
           <EntitySet Name="Teachers" EntityType="ToFastModel.Teacher" />
           <EntitySet Name="TimeCounts" EntityType="ToFastModel.TimeCount" />
+          <EntitySet Name="Versions" EntityType="ToFastModel.Version" />
           <AssociationSet Name="FK_QuestionIndex_Student" Association="ToFastModel.FK_QuestionIndex_Student">
             <End Role="Student" EntitySet="Students" />
             <End Role="QuestionIndex" EntitySet="QuestionIndexes" />
@@ -248,6 +259,15 @@
           <Property Name="StudentId" Type="Int32" Nullable="false" />
           <Property Name="SetTime" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Student" Relationship="ToFastModel.FK_TimeCount_Student" FromRole="TimeCount" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Version">
+          <Key>
+            <PropertyRef Name="Major" />
+          </Key>
+          <Property Name="Major" Type="Int32" Nullable="false" />
+          <Property Name="Minor" Type="Int32" Nullable="false" />
+          <Property Name="Build" Type="Int32" Nullable="false" />
+          <Property Name="Revision" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_QuestionIndex_Student">
           <End Type="ToFastModel.Student" Role="Student" Multiplicity="1">
@@ -378,6 +398,16 @@
                 <ScalarProperty Name="SetTime" ColumnName="SetTime" />
                 <ScalarProperty Name="StudentId" ColumnName="StudentId" />
                 <ScalarProperty Name="CountId" ColumnName="CountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Versions">
+            <EntityTypeMapping TypeName="ToFastModel.Version">
+              <MappingFragment StoreEntitySet="Version">
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+                <ScalarProperty Name="Build" ColumnName="Build" />
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

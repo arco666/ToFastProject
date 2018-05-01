@@ -32,5 +32,6 @@ namespace ToFast.Data
         public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<TimeCount> TimeCounts { get; set; }
+        public virtual DbSet<Version> Versions { get; set; }
     }
 }
