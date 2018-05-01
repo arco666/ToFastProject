@@ -35,6 +35,7 @@ namespace ToFast
             //로그인 및 총인원 표시
             lbCurAndTotal.Text = LoginStudent.ToString() + "(총 " + TotalStudent.ToString() + ")";
             Setting setting = DataRepository.Setting.GetFirst(null);
+            numTime.Text = setting.TimeLimit_Key.ToString();
             //현재 설정된 인원 하한수 표시
             tbStudentLimit.Text = Properties.Settings.Default.StudentLimit.ToString();
             //체크박스 로딩
@@ -81,7 +82,9 @@ namespace ToFast
 
         private void numTime_ValueChanged(object sender, EventArgs e)
         {
-            DataRepository.Setting.GetFirst(null).TimeLimit_Key = Convert.ToInt32(numTime.Value);
+            Data.Setting setting = DataRepository.Setting.GetFirst(null);
+            setting.TimeLimit_Key = Convert.ToInt32(numTime.Value);
+            DataRepository.Setting.Update(setting);
             DataRepository.TimeCount.DeleteAll();
         }
 

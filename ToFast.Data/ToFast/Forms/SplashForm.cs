@@ -29,7 +29,10 @@ namespace ToFast
         private void FadeIn(object sender, EventArgs e)
         {
             if (Opacity >= 1)
+            {
                 _t1.Stop();   //this stops the timer if the form is completely displayed
+                Close();
+            }
             else
                 Opacity += 0.05;
         }

@@ -110,6 +110,7 @@
             this.QuestionTime.Name = "QuestionTime";
             this.QuestionTime.ReadOnly = true;
             this.QuestionTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.QuestionTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.QuestionTime.Width = 130;
             // 
             // StudentName
@@ -146,6 +147,7 @@
             this.Controls.Add(this.dgvProfContents);
             this.Controls.Add(this.pictureboxSetting);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prof";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prof";

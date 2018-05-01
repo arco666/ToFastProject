@@ -23,12 +23,20 @@ namespace ToFast
         }
         public MSGDetail(QuestionView questionView) : this()
         {
+            Checkable(questionView.NO);
             lbName.Text = questionView.Name;
             lbTime.Text = questionView.Time.ToString();
             tbContext.Text = questionView.Content;
             evaluation.SetIndexNumber(questionView.NO);
             evaluation.RadioButtonSelection();
 
+        }
+
+        private void Checkable(int questionId)
+        {
+            QuestionIndex questionIndex = DataRepository.QuestionIndex.GetByQuestionPK(indexnumber: questionId);
+            questionIndex.Checkable = true;
+            DataRepository.QuestionIndex.Update(questionIndex);
         }
         
         private void btnSave_Click(object sender, EventArgs e)

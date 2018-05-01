@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
             this.txtQuestion = new System.Windows.Forms.TextBox();
             this.btSend_Question = new System.Windows.Forms.Button();
             this.ckbAnonymous = new System.Windows.Forms.CheckBox();
             this.btHistrory = new System.Windows.Forms.Button();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             this.lbTimer = new System.Windows.Forms.Label();
-            this.cbbSubject_Select = new System.Windows.Forms.ComboBox();
             this.subjectBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnToFast = new System.Windows.Forms.Button();
             this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbbSubject_Select = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -113,20 +114,6 @@
             this.lbTimer.Text = "timer";
             this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cbbSubject_Select
-            // 
-            this.cbbSubject_Select.BackColor = System.Drawing.Color.LavenderBlush;
-            this.cbbSubject_Select.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.subjectBindingSource1, "SubjectName", true));
-            this.cbbSubject_Select.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbSubject_Select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbbSubject_Select.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cbbSubject_Select.FormattingEnabled = true;
-            this.cbbSubject_Select.Location = new System.Drawing.Point(250, 243);
-            this.cbbSubject_Select.Name = "cbbSubject_Select";
-            this.cbbSubject_Select.Size = new System.Drawing.Size(139, 22);
-            this.cbbSubject_Select.TabIndex = 8;
-            this.cbbSubject_Select.Visible = false;
-            // 
             // subjectBindingSource1
             // 
             this.subjectBindingSource1.DataSource = typeof(ToFast.Data.Subject);
@@ -148,6 +135,22 @@
             // 
             this.subjectBindingSource.DataSource = typeof(ToFast.Data.Subject);
             // 
+            // cbbSubject_Select
+            // 
+            this.cbbSubject_Select.AutoCompleteCustomSource.AddRange(new string[] {
+            "c#",
+            "JAVA"});
+            this.cbbSubject_Select.BackColor = System.Drawing.Color.LavenderBlush;
+            this.cbbSubject_Select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSubject_Select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbbSubject_Select.Font = new System.Drawing.Font("GulimChe", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cbbSubject_Select.FormattingEnabled = true;
+            this.cbbSubject_Select.Location = new System.Drawing.Point(262, 247);
+            this.cbbSubject_Select.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbSubject_Select.Name = "cbbSubject_Select";
+            this.cbbSubject_Select.Size = new System.Drawing.Size(127, 20);
+            this.cbbSubject_Select.TabIndex = 10;
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -156,14 +159,15 @@
             this.BackgroundImage = global::ToFast.Properties.Resources.Design_Form_Default_002;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(512, 328);
-            this.Controls.Add(this.btnToFast);
             this.Controls.Add(this.cbbSubject_Select);
+            this.Controls.Add(this.btnToFast);
             this.Controls.Add(this.lbTimer);
             this.Controls.Add(this.btHistrory);
             this.Controls.Add(this.ckbAnonymous);
             this.Controls.Add(this.btSend_Question);
             this.Controls.Add(this.txtQuestion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Student";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -183,10 +187,10 @@
         private System.Windows.Forms.Button btHistrory;
         private System.Windows.Forms.Timer tmrTimer;
         private System.Windows.Forms.Label lbTimer;
-        private System.Windows.Forms.ComboBox cbbSubject_Select;
         private System.Windows.Forms.BindingSource subjectBindingSource;
         private System.Windows.Forms.BindingSource subjectBindingSource1;
         private System.Windows.Forms.Button btnToFast;
+        private System.Windows.Forms.ComboBox cbbSubject_Select;
         //>>>>>>> jky수정본1
     }
 }
