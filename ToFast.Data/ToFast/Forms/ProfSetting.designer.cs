@@ -146,6 +146,7 @@
             0,
             0});
             this.numTime.ValueChanged += new System.EventHandler(this.numTime_ValueChanged);
+            this.numTime.Enter += new System.EventHandler(this.numTime_Enter);
             // 
             // ProfSetting
             // 
@@ -166,6 +167,7 @@
             this.Name = "ProfSetting";
             this.Text = "ProfSetting";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfSetting_FormClosing);
+            this.Shown += new System.EventHandler(this.ProfSetting_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTime)).EndInit();
             this.ResumeLayout(false);

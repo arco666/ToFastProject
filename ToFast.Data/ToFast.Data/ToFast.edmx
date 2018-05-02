@@ -31,8 +31,9 @@
         </EntityType>
         <EntityType Name="Setting">
           <Key>
-            <PropertyRef Name="TimeLimit_Key" />
+            <PropertyRef Name="SettingId" />
           </Key>
+          <Property Name="SettingId" Type="int" Nullable="false" />
           <Property Name="TimeLimit_Key" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Student">
@@ -217,8 +218,9 @@
         </EntityType>
         <EntityType Name="Setting">
           <Key>
-            <PropertyRef Name="TimeLimit_Key" />
+            <PropertyRef Name="SettingId" />
           </Key>
+          <Property Name="SettingId" Type="Int32" Nullable="false" />
           <Property Name="TimeLimit_Key" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Student">
@@ -361,6 +363,7 @@
             <EntityTypeMapping TypeName="ToFastModel.Setting">
               <MappingFragment StoreEntitySet="Setting">
                 <ScalarProperty Name="TimeLimit_Key" ColumnName="TimeLimit_Key" />
+                <ScalarProperty Name="SettingId" ColumnName="SettingId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

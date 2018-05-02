@@ -26,12 +26,15 @@ namespace ToFast
     {
         public ProfSetting()
         {
+            InitializeComponent();
+        }
+        private void ProfSetting_Shown(object sender, EventArgs e)
+        {
             //로그인 및 총인원 카운트
             int LoginStudent = 0;
             int TotalStudent = 0;
             LoginStudent = DataRepository.Student.GetCount(x => x.LogIn == true);
             TotalStudent = DataRepository.Student.GetCount(x => x.StudentId > 0);
-            InitializeComponent();
             //로그인 및 총인원 표시
             lbCurAndTotal.Text = LoginStudent.ToString() + "(총 " + TotalStudent.ToString() + ")";
             Setting setting = DataRepository.Setting.GetFirst(null);
@@ -82,15 +85,26 @@ namespace ToFast
 
         private void numTime_ValueChanged(object sender, EventArgs e)
         {
-            Data.Setting setting = DataRepository.Setting.GetFirst(null);
-            setting.TimeLimit_Key = Convert.ToInt32(numTime.Value);
-            DataRepository.Setting.Update(setting);
-            DataRepository.TimeCount.DeleteAll();
+            if (_noNumTimeChange)
+            {
+                Setting setting = DataRepository.Setting.GetFirst(null);
+                setting.TimeLimit_Key = Convert.ToInt32(((NumericUpDown)sender).Value);
+                DataRepository.Setting.Update(setting);
+                DataRepository.TimeCount.DeleteAll();
+                _noNumTimeChange = false;
+            }
         }
 
         private void tbStudentLimit_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.StudentLimit = Convert.ToInt32(tbStudentLimit.Text);
+        }
+
+        private bool _noNumTimeChange = false;
+
+        private void numTime_Enter(object sender, EventArgs e)
+        {
+            _noNumTimeChange = true;
         }
     }
 }

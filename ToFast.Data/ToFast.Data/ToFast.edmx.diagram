@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="ToFastModel.Subject" Width="1.5" PointX="3" PointY="8.25" />
         <EntityTypeShape EntityType="ToFastModel.Teacher" Width="1.5" PointX="0.75" PointY="4.25" />
         <EntityTypeShape EntityType="ToFastModel.TimeCount" Width="1.5" PointX="3" PointY="0.75" />
-        <EntityTypeShape EntityType="ToFastModel.Version" Width="1.5" PointX="5.75" PointY="7" />
+        <EntityTypeShape EntityType="ToFastModel.Version" Width="1.5" PointX="5.75" PointY="8" />
         <AssociationConnector Association="ToFastModel.FK_QuestionIndex_Student" />
         <AssociationConnector Association="ToFastModel.FK_QuestionIndex_Teacher" />
         <AssociationConnector Association="ToFastModel.FK_TimeCount_Student" />

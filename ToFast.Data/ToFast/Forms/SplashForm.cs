@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace ToFast
 {
@@ -31,6 +33,8 @@ namespace ToFast
             if (Opacity >= 1)
             {
                 _t1.Stop();   //this stops the timer if the form is completely displayed
+                Thread.Sleep(1000);
+
                 Close();
             }
             else
